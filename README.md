@@ -17,6 +17,7 @@
    **Tech Stack** : TBD
    
 2. **Title** : **Improving public transport using dynamic routing based on crowd movement prediction.** <br>
-   **Description** : Help predict the movement of large crowds to/from periodic and publicly accessible events/destinations and dynamically allot bus routes to service them. This would provide the much needed public transport facility and help make effective utilization of state's resources.  
+   **Description** : Help predict the movement of large crowds to/from periodic and publicly accessible events/destinations and dynamically allot bus routes to service them. This would provide the much needed public transport facility and help make effective utilization of state's resources.<br><br>
+                     https://www.youtube.com/watch?v=1Z1KLpf_7tU  - This video discusses the need for public transportation in the US and the way people are affected due to lack of it. We're just trying to find a way to utilize the existing public infrastructure and resources in an efficient way. <br>   
    **Goal** : Improving public transport and efficient utilization of resources.<br>
    **Tech Stack** : TBD
