@@ -1,4 +1,4 @@
-# Group-4
+# MentalHealth - Group-4
 
 ### Team Members
 * Alok Goyal<br>
