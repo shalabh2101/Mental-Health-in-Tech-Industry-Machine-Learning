@@ -30,3 +30,7 @@ e) Measure the effectiveness of the solution applied by the tech companies to ha
 **Architecture Diagram**
 
 ![Architecture Diagram](architecture_diagram.png) 
+
+**Technology Stack**
+
+Machine Learning, Tensor flow, AWS, WebHarvey
