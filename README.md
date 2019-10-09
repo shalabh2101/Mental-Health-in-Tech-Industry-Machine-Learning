@@ -29,7 +29,7 @@ e) Measure the effectiveness of the solution applied by the tech companies to ha
 
 **Architecture Diagram**
 
-![Architecture Diagram](architecture_diagram.png) 
+![Architecture Diagram] (https://github.com/SJSUFall2019-CMPE272/MentalHealth/blob/master/architecture_diagram.png) 
 
 **Technology Stack**
 
