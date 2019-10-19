@@ -27,9 +27,13 @@ c) Steps to identify the stealth symptoms of the mental health illness at the wo
 d) Suggest corrective measures to the employers that can help them create a conducive work environment.<br>
 e) Measure the effectiveness of the solution applied by the tech companies to handle the multiple issues.<br>
 
+---
+
 **Architecture Diagram**
 
 ![Architecture Diagram](https://github.com/SJSUFall2019-CMPE272/MentalHealth/blob/master/architecture_diagram.png) 
+
+---
 
 **Technology Stack**
 
