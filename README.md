@@ -33,4 +33,10 @@ e) Measure the effectiveness of the solution applied by the tech companies to ha
 
 **Technology Stack**
 
-Machine Learning, Tensor flow, AWS, WebHarvey
+Programming languages & Libraries: Python, Tensorflow, scikit-learn
+
+Tools & Technologies: Machine Learning, Anaconda, WebHarvey
+
+Web Technologies: HTML5, CSS3, JavaScript, React, Node.JS, REST API
+
+Miscellaneous : Agile, Git, AWS
