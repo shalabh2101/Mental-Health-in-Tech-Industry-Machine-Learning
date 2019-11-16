@@ -47,7 +47,7 @@ e) Measure the effectiveness of the solution applied by the tech companies to ha
 
 ## Design Thinking
 
-**Persona**: The application is designed to help employers build a workspace that is supportive of the employee’s mental health conditions and does not stigmatize mental health issues.
+**Persona**: The application is designed to help employers build a workspace that is supportive of the employee’s mental health conditions and does not stigmatize mental health issues. It will also help the employer to assign a mentor from organisation  based on similar personalities to help the affected person.
  
 **Hill Statement:** 
 
