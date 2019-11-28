@@ -1,0 +1,60 @@
+
+.btn {
+    padding: 12px 32px;
+    border: 1px solid;
+    font-size: 15px;
+    transition: all 0.5s;
+    border-radius: 3px;
+    font-weight: 500;
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.btn-sm {
+    padding: 10px 30px;
+    font-size: 12px;
+}
+
+
+@each $name,
+$color in $colors {
+  .btn-#{$name} {
+      background-color: #{$color} !important;
+      border: 1px solid #{$color} !important;
+      box-shadow: 0 3px 10px rgba($color, 0.5) !important;
+      color: $white;
+      &:hover,
+      &:focus,
+      &.active {
+          background-color: #{darken($color, 5%)}!important;
+          border:1px solid #{darken($color, 5%)}!important;
+          
+          color: $white;
+      }
+  }
+  .btn-outline-#{$name} {
+      border: 1px solid #{$color} !important;
+      color: #{$color};
+      &:hover,
+      &:focus,
+      &.active {
+          background-color: #{$color} !important;
+          border:1px solid #{$color} !important;
+          box-shadow: 0 3px 10px rgba($color, 0.5);
+          color: $white;
+      }
+  }
+}
+
+.btn-light {
+  background-color: $light;
+  border: 1px solid $light;
+  color: $dark;
+    &:hover, &:focus, &.active {
+      background-color: lighten($light, 5%);
+      border: 1px solid lighten($light, 5%);
+      color: $dark;
+  }
+}
+

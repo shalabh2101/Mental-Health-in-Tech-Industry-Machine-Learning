@@ -1,0 +1,554 @@
+@mixin overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.bg-overlay {
+    background: linear-gradient(to right, $purple, darken($purple, 8%));
+    opacity: 0.85;
+    @include overlay
+}
+
+.bg-dark-overlay {
+    background: $black;
+    opacity: 0.75;
+    @include overlay
+}
+
+// ***** HERO 1 ***** //
+.hero-1-bg {
+    .video-play-icon {
+        height: 75px;
+        width: 75px;
+        border: 2px solid $white;
+        color: $white;
+        display: inline-block;
+        border-radius: 50%;
+        line-height: 75px;
+        font-size: 30px;
+        box-shadow: inset 0 5px 12px rgba($black, 0.15);
+        transition: all 0.5s;
+        &:hover {
+            background: $white;
+            color: $purple;
+            box-shadow: 0 0 20px rgba($black, 0.35);
+        }
+    }
+    .bg-hero-overlay {
+        background-image: url("../images/hero-bg-1.png");
+        opacity: 1;
+        @include overlay
+    }
+}
+
+.mfp-close {
+    &:focus {
+        outline: none;
+    }
+}
+
+// ***** HERO-2 ***** //
+.hero-2-bg {
+    padding: 195px 0 140px 0px;
+    .hero-2-registration-form {
+        box-shadow: 0 4px 16px rgba($black, .065);
+        padding: 40px;
+        .registration-form {
+            .form-control {
+                border-color: darken($light, 6%);
+                &:focus {
+                    box-shadow: none;
+                    border-color: lighten($purple, 16%);
+                }
+            }
+        }
+        .form-border {
+            border: 1px solid darken($light, 5%);
+        }
+    }
+    .hero-2-title {
+        font-size: 2.6rem;
+    }
+}
+
+// ***** HERO-3 ***** //
+.hero-3-bg {
+    padding: 250px 0 230px 0px;
+    .hero-3-title {
+        font-size: 2.8rem;
+    }
+    .Subcribe-form {
+        form {
+            position: relative;
+            margin: 0px auto;
+        }
+        input {
+            padding: 12px 20px;
+            width: 60%;
+            font-size: 17px;
+            color: #4c5667 !important;
+            border: none;
+            outline: none !important;
+            background-color: rgba($white, 0.85);
+            border-radius: 30px;
+            position: relative;
+            top: 3px;
+            &::placeholder {
+                font-size: 15px;
+                color: lighten($secondary, 10%);
+            }
+        }
+    }
+}
+
+// ***** HERO-4 ***** //
+.hero-4-bg {
+    padding: 210px 0 200px 0px;
+    .hero-4-title {
+        text-shadow: 5px 5px 8px rgba($black, 0.12);
+        font-size: 2.9rem;
+    }
+    .hero-4-content {
+        position: relative;
+        z-index: 1;
+    }
+    .subcribe-form {
+        form {
+            position: relative;
+            max-width: 600px;
+            margin: 0px auto;
+        }
+        input {
+            padding: 16px 20px;
+            width: 100%;
+            font-size: 17px;
+            border: none;
+            outline: none !important;
+            padding-right: 160px;
+            padding-left: 30px;
+            background-color: $white;
+            border-radius: 30px;
+        }
+        button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+        ::placeholder {
+            font-size: 16px;
+            color: lighten($secondary, 10%);
+        }
+    }
+    .google-sign {
+        background: $white;
+        display: inline-block;
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        line-height: 46px;
+        text-align: center;
+        img {
+            max-width: 22px;
+        }
+    }
+}
+
+// ***** HERO-5 ***** // 
+.hero-5-bg {
+    padding: 180px 0 180px 0px;
+    .hero-5-title {
+        font-size: 2.8rem;
+    }
+    .img-video {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba($black, 0.4);
+        border-radius: .25rem;
+        transition: all 0.5s;
+        padding: 10px;
+        .video-icon {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 50%;
+            transform: translateY(50%);
+            .play-icon {
+                height: 64px;
+                width: 64px;
+                line-height: 64px;
+                text-align: center;
+                border-radius: 50%;
+                display: inline-block;
+                color: $white;
+                border: 1px solid $white;
+                box-shadow: inset 2px 2px 6px rgba($black, 0.3);
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                right: 0px;
+                transform: translateY(-50%);
+                transition: all 0.5s;
+                &:hover {
+                    background: $white;
+                    color: $purple;
+                    box-shadow: 0px 2px 10px rgba($black, 0.4);
+                }
+            }
+        }
+    }
+}
+
+// ***** HERO-6 ***** // 
+.hero-6-bg {
+    padding: 240px 0 250px 0px;
+    .hero-6-content {
+        position: relative;
+        z-index: 1;
+        .hero-6-title-icon {
+            display: inline-block;
+            position: relative;
+            animation: bounce 0.7s infinite linear;
+        }
+    }
+}
+
+// ***** SERVICES ***** //
+.service-box {
+    position: relative;
+    padding: 65px 30px 30px;
+    transition: all 0.5s;
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba($dark, .05);
+    .service-icon {
+        position: relative;
+        z-index: 1;
+        &:after {
+            content: "";
+            background: linear-gradient(45deg, transparent, rgba($purple, .06));
+            height: 70px;
+            width: 70px;
+            position: absolute;
+            border-radius: 6px;
+            transform: rotate(45deg);
+            left: 0px;
+            top: -16px;
+        }
+    }
+    &:hover,
+    &.active {
+        background: linear-gradient(to right, $purple, darken($purple, 4%));
+        .service-icon {
+            color: $white !important;
+            &:after {
+                background: linear-gradient(45deg, transparent, rgba($white, .06));
+            }
+        }
+        .service-title,
+        a {
+            color: $white !important;
+        }
+        p {
+            color: rgba($white, 0.5) !important;
+        }
+    }
+}
+
+// ***** FEATURES ***** //
+.features-img {
+    img {
+        border-radius: 6px;
+        box-shadow: 0 10px 40px -30px $dark;
+    }
+}
+
+.right-icon {
+    position: relative;
+    top: 1px;
+}
+
+// ***** COUNTER ***** //
+.counter-box {
+    background: rgba($white, 0.025);
+    border-bottom: 1px solid rgba($white, .2);
+}
+
+// ***** TESTIMONIAL ***** //
+.testi-content {
+    transition: all 0.5s;
+    border-bottom: 2px solid transparent;
+    padding: 30px;
+    box-shadow: 0 3px 10px rgba($black, 0.05);
+    .user-img {
+        box-shadow: 0 5px 12px rgba($purple, .2);
+        transition: all 0.5s;
+    }
+    .testi-icon {
+        color: lighten($purple, 16%);
+    }
+    &:hover {
+        border-bottom: 2px solid $purple;
+        box-shadow: 0 3px 16px rgba($black, 0.1);
+        .user-img {
+            box-shadow: 0 7px 12px rgba($purple, .3);
+            transform: translateY(-6px);
+        }
+        .testi-icon {
+            color: $purple;
+        }
+    }
+}
+
+.owl-theme .owl-controls .owl-page span {
+    width: 14px;
+    height: 4px;
+    background-color: rgba($purple, 0.4);
+}
+
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span {
+    width: 20px;
+    height: 4px;
+    background-color: $purple;
+}
+
+.clients-logo {
+    opacity: 0.3;
+    transition: all 0.5s;
+    &:hover {
+        opacity: 0.9;
+        transition: all 0.5s;
+    }
+}
+
+// ***** PRICING ***** //
+.pricing-box {
+    box-shadow: 0 3px 20px rgba($dark, 0.03);
+    border-radius: 6px;
+    transition: all 0.5s;
+    .pricing-icon {
+        box-shadow: 0 0 30px 0px rgba($purple, 0.12);
+        transition: all 0.5s;
+    }
+    .ribbon {
+        position: absolute;
+        left: 20px;
+        top: 0px;
+        background: $bg-gradient;
+        padding: 8px 4px 16px 4px;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    }
+    &:hover,
+    &.active {
+        box-shadow: 0 4px 30px rgba($dark, 0.06);
+        transform: translateY(-10px);
+        transition: all 0.5s;
+        .pricing-icon {
+            background: $bg-gradient !important;
+            color: $white !important;
+        }
+    }
+}
+
+// ***** CTA ***** //
+.bg-cta-overlay {
+    background-image: url("../images/cta-bg.png");
+    opacity: 1;
+    @include overlay
+}
+
+// ***** FOOTER ***** //
+.footer-sub-menu {
+    li {
+        transition: all 0.5s;
+        a {
+            color: lighten($secondary, 5%) !important;
+            &:hover {
+                color: darken($secondary, 15%) !important;
+            }
+        }
+    }
+}
+
+// ***** HERO-2 ***** //
+.hero-two-bg {
+    overflow: hidden;
+}
+
+.hero-two-img img {
+    position: absolute;
+    right: 0;
+    top: 250px;
+}
+
+.hero-two-content {
+    max-width: 500px;
+    .hero-2-title {
+        font-size: 2.7rem;
+    }
+}
+
+// ***** TESTIMONIAL ***** //
+.testi-content-2 {
+    transition: all 0.5s;
+    .texti-2-box {
+        position: relative;
+        box-shadow: 0 4px 18px rgba($dark, .05);
+        .testi-2-icon {
+            color: $purple;
+        }
+        &:after {
+            content: "";
+            background: $white;
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            transform: rotate(45deg);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            bottom: -9px;
+            box-shadow: 2px 2px 2px rgba($black, .012);
+        }
+    }
+    .testi-img-content {
+        margin-top: 30px;
+        img {
+            max-width: 60px;
+            box-shadow: 0 6px 12px rgba($black, .2);
+        }
+    }
+    &:hover {
+        transform: translateY(-8px);
+        .texti-2-box {
+            background: $purple;
+            box-shadow: 0 4px 20px rgba($purple, .3);
+            p {
+                color: rgba($white, .6) !important;
+            }
+            .testi-2-icon {
+                color: $white;
+            }
+            &:after {
+                background: $purple;
+            }
+        }
+        .testi-img-content {
+            img {
+                box-shadow: 0 4px 12px rgba($purple, .4);
+            }
+        }
+    }
+}
+
+// ***** LETEST POST ***** //
+.post-content {
+    box-shadow: 0 4px 18px rgba($dark, .05);
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -0.2em;
+    }
+    70% {
+        top: -0.2em;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .hero-title {
+        font-size: 30px !important;
+    }
+    .hero-2-bg {
+        padding: 140px 0px 260px !important;
+    }
+    .hero-2-title,
+    .hero-4-title,
+    .hero-5-title {
+        font-size: 2rem !important;
+    }
+    .service-2-content {
+        h3 {
+            font-size: 1.5rem !important;
+        }
+    }
+    .hero-4-bg,
+    .hero-5-bg {
+        padding: 130px 0 140px 0px;
+    }
+    .hero-6-bg {
+        padding: 130px 0 110px 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-1-bg {
+        padding: 120px 0px 50px 0px;
+        height: auto !important;
+        .video-play-icon {
+            background: $purple !important;
+            box-shadow: 0 0 5px 8px rgba($purple, 0.2) !important;
+            color: $white !important;
+        }
+    }
+    .hero-two-bg {
+        padding: 140px 0px 420px;
+        height: auto !important;
+        .hero-two-img {
+            img {
+                top: auto;
+                left: 0;
+                margin: 0 auto;
+            }
+        }
+    }
+    .cta-content {
+        text-align: center !important;
+        .cta-btn {
+            text-align: center !important;
+        }
+    }
+    .footer-about-content {
+        text-align: center;
+    }
+    .hero-3-bg {
+        padding: 150px 0 110px 0px;
+        .hero-3-title {
+            font-size: 1.8rem !important;
+        }
+        .Subcribe-form {
+            input {
+                width: 90%;
+                margin-bottom: 25px;
+            }
+            .btn {
+                margin: 0 !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-two-bg {
+        padding: 180px 0px 520px !important;
+        height: auto !important;
+        .hero-two-img {
+            img {
+                top: auto;
+                left: 0;
+                margin: 0 auto;
+            }
+        }
+    }
+}
