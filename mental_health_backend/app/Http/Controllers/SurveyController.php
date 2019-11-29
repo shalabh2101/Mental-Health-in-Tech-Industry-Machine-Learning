@@ -92,30 +92,38 @@ class SurveyController extends Controller
         return view('surveys.survey_list',['survey_list' => $survey_list, 'sidenav' => 'manage_survey']);
     }
 
-    public function viewSurveyQuestions($survey_id)
+    public function viewSurveyQuestionList($survey_id)
     {
-//        $surveys = Survey::getSurveyWithQuestions(1)->first();
         $questions = Question::where(['survey_id' => 1])->paginate(10);
         if(!empty($questions))
         {
-
-//            echo "<pre>";
-//            foreach ($questions as $q)
-//            {
-//                print_r($q);
-//            }
-//            dd($questions);
-            return view('surveys.survey_questions_list',['question_list' => $questions,'sidenav' => 'manage_questions']);
+            $viewOnly = true;
+            return view('surveys.survey_questions_list',['question_list' => $questions,'sidenav' => 'manage_questions','viewOnly' => $viewOnly]);
         }
+    }
 
+    public function editSurveyQuestionList($survey_id)
+    {
+        $questions = Question::where(['survey_id' => 1])->paginate(10);
+        if(!empty($questions))
+        {
+            $viewOnly = false;
+            return view('surveys.survey_questions_list',['question_list' => $questions,'sidenav' => 'manage_questions','viewOnly' => $viewOnly]);
+        }
     }
 
     public function editSurveyQuestion($question_id)
     {
         $question = Question::getQuestionWithOptions($question_id)->first();
+        $survey_id = $question->survey_id;
+        return view('surveys.survey_question',['survey_id' => $survey_id , 'question' => $question,'sidenav' => 'manage_questions', 'viewOnly' => false]);
+    }
 
-//        dd($question);
-        return view('surveys.survey_question',['question' => $question,'sidenav' => 'manage_questions']);
+    public function viewSurveyQuestion($question_id)
+    {
+        $question = Question::getQuestionWithOptions($question_id)->first();
+        $survey_id = $question->survey_id;
+        return view('surveys.survey_question',['survey_id' => $survey_id ,'question' => $question,'sidenav' => 'manage_questions', 'viewOnly' => true]);
     }
 
     public function updateSurveyQuestion(Request $request)
@@ -146,6 +154,29 @@ class SurveyController extends Controller
         $response = [];
         $response['status'] = true;
         $response['message'] = "Question updated";
+        return $response;
+    }
+
+    public function publishUpdate($survey_id, Request $request)
+    {
+        $publish_data = $request->get('publish_data');
+        $survey = Survey::where(['id' => $survey_id])->first();
+
+        $response = [];
+        if(!empty($survey))
+        {
+            $survey->is_published = $publish_data['publish'];
+            $survey->save();
+
+            $response['status'] = true;
+            $response['message'] = "Survey Updated successfully";
+        }
+        else
+        {
+            $response['status'] = false;
+            $response['message'] = "Invalid request";
+        }
+
         return $response;
     }
 

@@ -7,6 +7,20 @@
     <div class="main-panel">
 
         <div class="content">
+
+
+            <nav aria-label="breadcrumb" role="navigation">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/survey/list">Surveys</a></li>
+{{--                    @if($viewOnly)
+                        <li class="breadcrumb-item active" aria-current="page"><a href="/survey/view/{{ $survey_id }}">{{ $survey_id }}</a></li>
+                    @else
+                        <li class="breadcrumb-item active" aria-current="page"><a href="/survey/edit/{{ $survey_id }}">{{ $survey_id }}</a></li>
+                    @endif--}}
+                </ol>
+            </nav>
+
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Survey Questions</h2>
@@ -31,13 +45,16 @@
                                 <td>{{ $question->question }}</td>
                                 <td>{{ $question->question_category }}</td>
                                 <td class="td-actions">
-                                        <a href="/survey/question/{{$question->id}}/edit" style="display: inline">
-                                            <button  type="button" rel="tooltip" class="btn btn-success survey_edit" id="{{ $question->id }}">
-                                                <i class="material-icons">edit</i>
-                                            </button>
-                                        </a>
-                                        <a href="/survey/question/{{$question->id}}/edit" style="display: inline">
-                                            <button type="button" rel="tooltip" class="btn btn-success survey_view" id="{{ $question->id }}">
+
+                                        @if(!$viewOnly)
+                                            <a href="/survey/question/{{$question->id}}/edit" style="display: inline">
+                                                <button  type="button" rel="tooltip" class="btn btn-success survey_edit form-check-inline" id="{{ $question->id }}">
+                                                    <i class="material-icons">edit</i>
+                                                </button>
+                                            </a>
+                                        @endif
+                                        <a href="/survey/question/{{$question->id}}/view" style="display: inline">
+                                            <button type="button" rel="tooltip" class="btn btn-success survey_view form-check-inline" id="{{ $question->id }}">
                                                 <i class="material-icons">remove_red_eye</i>
                                             </button>
                                         </a>
@@ -59,18 +76,6 @@
 @include("partials.scripts");
 
 <script>
-
-    // $('.appointment_edit').click(function(){
-    //
-    //     var id = $(this).attr('id');
-    //     alert("Edit clicked" + id);
-    // });
-    //
-    // $('.appointment_view').click(function(){
-    //
-    //     var id = $(this).attr('id');
-    //     alert("Edit clicked" + id);
-    // });
 
 </script>
 @include("partials.footer");

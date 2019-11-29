@@ -34,15 +34,14 @@ Route::post('/survey/save-answer', 'SurveyController@saveAnswer');
 
 Route::get("/survey/list","SurveyController@listSurveys");
 
-Route::get("/survey/view/{survey_id}","SurveyController@viewSurveyQuestions");
+Route::get("/survey/view/{survey_id}","SurveyController@viewSurveyQuestionList");
+Route::get("/survey/edit/{survey_id}","SurveyController@editSurveyQuestionList");
+
 
 Route::get("/survey/question/{question_id}/edit","SurveyController@editSurveyQuestion");
+Route::get("/survey/question/{question_id}/view","SurveyController@viewSurveyQuestion");
 
 Route::post("/survey/question/update","SurveyController@updateSurveyQuestion");
-//Route::get("/appointments","AppointmentsController@getAllAppointments");
-//
-//Route::get("/appointment/view/{id}", "AppointmentsController@viewAppointment");
-//
-//Route::get("/appointment/manage/{id}", "AppointmentsController@manageAppointment");
-//
-//Route::post("/appointment/update", "AppointmentsController@updateAppointment");
+
+Route::post("/survey/publish_update/{survey_id}","SurveyController@publishUpdate");
+
