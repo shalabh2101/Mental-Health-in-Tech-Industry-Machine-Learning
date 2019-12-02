@@ -25,16 +25,15 @@
                 <div class="card-header">
                     <h2 class="card-title">Survey Questions</h2>
                 </div>
+                <div class="container-fluid table-responsive">
 
-                <div class="container-fluid">
-
-                    <table class="table table-responsive table-hover table-responsive-md ps-scrollbar-x">
+                    <table class="table table-hover ps-scrollbar-x">
                         <thead>
-                        <tr style="font-weight: bold">
-                            <th class="text-center">Question Id</th>
-                            <th>Question</th>
-                            <th>Question Category</th>
-                            <th class="text-right">Actions</th>
+                        <tr>
+                            <th class="text-center" style="font-weight: bold">Question Id</th>
+                            <th style="font-weight: bold">Question</th>
+                            <th style="font-weight: bold">Question Category</th>
+                            <th style="font-weight: bold">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -44,22 +43,21 @@
                                 <td class="text-center">{{ $question->id }}</td>
                                 <td>{{ $question->question }}</td>
                                 <td>{{ $question->question_category }}</td>
-                                <td class="td-actions">
+                                <td class="td-actions form-check-inline">
 
                                         @if(!$viewOnly)
-                                            <a href="/survey/question/{{$question->id}}/edit" style="display: inline">
-                                                <button  type="button" rel="tooltip" class="btn btn-success survey_edit form-check-inline" id="{{ $question->id }}">
+                                            <a href="/survey/question/{{$question->id}}/edit">
+                                                <button  type="button" rel="tooltip" class="btn btn-success survey_edit form-check-inline mr-2" id="{{ $question->id }}" data-toggle="tooltip" title="Edit">
                                                     <i class="material-icons">edit</i>
                                                 </button>
                                             </a>
                                         @endif
-                                        <a href="/survey/question/{{$question->id}}/view" style="display: inline">
-                                            <button type="button" rel="tooltip" class="btn btn-success survey_view form-check-inline" id="{{ $question->id }}">
+                                        <a href="/survey/question/{{$question->id}}/view">
+                                            <button type="button" rel="tooltip" class="btn btn-info survey_view form-check-inline" id="{{ $question->id }}" data-toggle="tooltip" title="View">
                                                 <i class="material-icons">remove_red_eye</i>
                                             </button>
                                         </a>
                                 </td>
-
                             </tr>
                         @endforeach
                         </tbody>

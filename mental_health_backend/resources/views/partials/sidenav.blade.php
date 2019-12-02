@@ -24,6 +24,14 @@
 {{--                    <p>Person</p>--}}
 {{--                </a>--}}
 {{--            </li>--}}
+
+            <li class="nav-item {{ $sidenav == "survey_sessions" ? 'active' : '' }} ">
+                <a class="nav-link" href="/survey/sessions">
+                    <i class="material-icons">content_paste</i>
+                    <p>Survey Sessions</p>
+                </a>
+            </li>
+
             <li class="nav-item {{ $sidenav == "appointments" ? 'active' : '' }} ">
                 <a class="nav-link" href="/survey/start">
                     <i class="material-icons">content_paste</i>
@@ -35,6 +43,13 @@
                 <a class="nav-link" href="/survey/list">
                     <i class="material-icons">content_paste</i>
                     <p>Manage Survey</p>
+                </a>
+            </li>
+
+            <li class="nav-item {{ $sidenav == "mentor_recommendation" ? 'active' : '' }} ">
+                <a class="nav-link" href="/mentor-recommendation/list">
+                    <i class="material-icons">content_paste</i>
+                    <p>Mentor Recommendation</p>
                 </a>
             </li>
 

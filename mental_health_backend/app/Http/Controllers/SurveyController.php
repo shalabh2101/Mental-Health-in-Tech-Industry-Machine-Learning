@@ -9,6 +9,7 @@ use App\SurveySession;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Option;
+use Illuminate\Support\Facades\DB;
 
 class SurveyController extends Controller
 {
@@ -44,9 +45,6 @@ class SurveyController extends Controller
         $question = Question::where(['id' => $survey_response['question_id']])->first();
         $isLastQuestion = $survey_response['isLastQuestion'];
 
-//        var_dump($isLastQuestion);
-//        echo $isLastQuestion == "true";
-
         if($question)
         {
             //Remove existing records if any
@@ -81,9 +79,93 @@ class SurveyController extends Controller
                 $survey_session->is_complete = 1;
                 $survey_session->save();
                 session()->remove('survey_session_id');
+
+
+                //Call ML API
+                $question_ids = array_column(Question::where(['question_category' => 'MENTAL_HEALTH'])->get()->toArray(), 'id');
+                $survey_id = 17;
+                $question_ids = implode(",", $question_ids);
+
+                $survey_result = DB::select("
+                                                    select sr.id survey_session_id, sr.question_id question_id, answer_text, 
+                                                    question_type, option_value, option_text 
+                                                    from survey_responses sr
+                                                    left join questions q on q.id = sr.question_id 
+                                                    left join options o on o.id = sr.selected_option
+                                                    where survey_session_id = $survey_id  
+                                                    and sr.question_id in ($question_ids) 
+                                                    order by q.id");
+                $survey_data  = [];
+                foreach ($survey_result as $survey_response)
+                {
+                    $response = '';
+                    if($survey_response->question_type == "TEXT_BOX")
+                    {
+                        $response = $survey_response->answer_text;
+                    }
+                    else
+                    {
+                        $response = $survey_response->option_value;
+                    }
+
+                    $survey_data[$survey_response->question_id] = $response;
+
+                }
+
+                $prediction_result = PredictionController::predictTreatmentRequirement($survey_data);
+
+                $survey_session->treatment_required = $prediction_result;
+                $survey_session->save();
             }
         }
 
+    }
+
+    public function test()
+    {
+
+        $question_ids = array_column(Question::where(['question_category' => 'MENTAL_HEALTH'])->get()->toArray(), 'id');
+        $survey_id = 17;
+        $question_ids = implode(",", $question_ids);
+
+        $survey_result = DB::select("select sr.id survey_session_id, sr.question_id question_id, answer_text, question_type, option_value, option_text from survey_responses sr
+left join questions q on q.id = sr.question_id 
+left join options o on o.id = sr.selected_option
+where survey_session_id = $survey_id  and sr.question_id in ($question_ids) order by q.id");
+
+        $survey_data  = [];
+//        dd($survey_result);
+        foreach ($survey_result as $survey_response)
+        {
+            $response = '';
+            if($survey_response->question_type == "TEXT_BOX")
+            {
+                $response = $survey_response->answer_text;
+            }
+            else
+            {
+                $response = $survey_response->option_value;
+            }
+
+            $survey_data[$survey_response->question_id] = $response;
+//            array_push($survey_data, $response);
+        }
+
+        $prediction_result = PredictionController::predictTreatmentRequirement($survey_data);
+//        dd($prediction_result);
+//        echo json_encode($survey_data);
+//        die;
+//        dd($survey_data);
+
+        $survey_responses = SurveyResponse::where(['survey_session_id' => 17])->whereIn('question_id',[$question_ids]);
+        $q = $survey_responses->toSql();
+        $bindings = $survey_responses->getBindings();
+        $r = $survey_responses->all();
+        dd(DB::getQueryLog());
+        print_r($q);
+        dd($r);
+        dd($bindings);
+        dd($question_ids);
     }
 
     public function listSurveys()
@@ -178,6 +260,12 @@ class SurveyController extends Controller
         }
 
         return $response;
+    }
+
+    public function getSurveySessions()
+    {
+        $survey_sessions = SurveySession::where(['is_complete' => 1])->paginate(10);
+        return view('surveys.survey_sessions',['survey_sessions' => $survey_sessions, 'sidenav' => 'survey_sessions']);
     }
 
 }

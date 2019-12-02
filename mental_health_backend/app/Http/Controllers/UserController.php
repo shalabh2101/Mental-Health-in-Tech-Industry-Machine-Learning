@@ -2,21 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Employee;
 use App\Events\UserRegisterViaEmailEvent;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
-
 class UserController extends Controller
 {
     public function register(Request $request)
     {
-
-
     }
 
     public function loginView()
@@ -76,6 +75,12 @@ class UserController extends Controller
         }
 
         return redirect('/');
+    }
+
+    public function employeeList()
+    {
+        $employee_list = Employee::paginate(10);
+        return view('employees.employee_list',['employee_list' => $employee_list, 'sidenav' => 'employee_list']);
     }
 
 }

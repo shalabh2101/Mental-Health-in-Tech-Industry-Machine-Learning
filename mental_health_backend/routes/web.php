@@ -45,3 +45,10 @@ Route::post("/survey/question/update","SurveyController@updateSurveyQuestion");
 
 Route::post("/survey/publish_update/{survey_id}","SurveyController@publishUpdate");
 
+
+Route::get("/survey/test", "SurveyController@test");
+Route::get("/survey/sessions", "SurveyController@getSurveySessions");
+
+Route::get("/employees/employee_list", "UserController@employeeList");
+
+Route::get("/employees/profile/{employee_id}", "EmployeeController@viewEmployeeProfile");
