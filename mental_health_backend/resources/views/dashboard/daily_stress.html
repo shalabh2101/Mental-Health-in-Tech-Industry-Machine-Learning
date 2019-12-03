@@ -1,0 +1,52 @@
+<! DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <title>Daliy Mood Chart</title>
+  </head>
+    <<body>
+      <div class="container">
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <script>
+      let myChart = document.getElementById('myChart').getContext('2d');
+
+Chart.defaults.global.defaultFontFamily='Lato',
+Chart.defaults.global.defaultFontSize=18;
+Chart.defaults.global.defaultFontColor='#777';
+
+      let moodChart = new Chart(myChart, {
+       type: 'line',
+       data:{
+         labels:['1st Nov', '2nd Nov', '3rd Nov', '4th Nov', '5th Nov', '6th Nov', '7th Nov', '8th Nov', '9th Nov', '10th Nov', '11th Nov', '12th Nov',
+          '13th Nov', '14th Nov', '15th Nov', '16th Nov', '17th Nov', '18th Nov', '19th Nov', '20th Nov', '21st Nov', '22nd Nov', '23rd Nov', '24th Nov',
+          '25th Nov', '26th Nov', '27th Nov', '28th Nov', '29th Nov', '30th Nov'],
+
+         datasets:[{
+           label:'Daily Mood',
+           data:[
+           2.17, 0, 0, 3.92, 3, 3.83, 3.12, 2.43, 0, 0, 3.75, 3.75, 3.98, 3.38 ,2.18, 0, 0, 4.04, 3, 3.92, 2.5, 1.9, 0, 0, 4.03, 3.84, 4.33, 3.14, 2.12, 0 ],
+
+          backgroundColor: ['rgba(75, 192, 192, 0.6)'],
+          borderWidth:2,
+          hoverBorderWidth:2,
+          hoverBorderColor: '#000'
+         }]
+       },
+          options:{
+           title:{
+             display:true,
+             text: 'Daily employee mood for the November month',
+             fontSize: 22
+           }
+          }
+
+      });
+      </script>
+    </body>
+    </html>
