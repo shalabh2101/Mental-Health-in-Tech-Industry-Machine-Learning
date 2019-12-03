@@ -1,0 +1,23 @@
+//
+// general.scss
+//
+
+body {
+    font-family: $font-family-secondary;
+}
+
+h1, h2, h3, h4, h5, h5 {
+    font-family: $font-family-base;
+}
+a {
+    text-decoration: none !important;
+    outline: none;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.font-primary {
+    font-family: $font-family-base;
+}

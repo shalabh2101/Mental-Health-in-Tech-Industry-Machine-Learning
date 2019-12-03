@@ -1,0 +1,181 @@
+.navbar-custom {
+    padding: 12px;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 999;
+    margin-bottom: 0px;
+    transition: all 0.5s;
+    .logo-sticky {
+        .logo-dark {
+            display: none;
+        }
+        .logo-light {
+            display: inline-block;
+        }
+    }
+    .navbar-nav {
+        li {
+            a {
+                line-height: 26px;
+                color: rgba($white, .5) !important;
+                font-size: 13px;
+                transition: all 0.5s;
+                background-color: transparent !important;
+                padding: 6px 0 !important;
+                margin: 0 16px;
+                font-weight: 600;
+                text-transform: uppercase;
+                &:after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    margin: 0 auto;
+                    background: $white;
+                    transition: width .3s;
+                }
+            }
+        }
+    }
+}
+
+.navbar-toggler {
+    font-size: 24px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: $white;
+}
+
+.navbar-custom .navbar-nav li.active a,
+.navbar-custom .navbar-nav li a:hover,
+.navbar-custom .navbar-nav li a:active {
+    color: $white !important;
+    &:after {
+        width: 100%;
+        transition: width .3s;
+    }
+}
+
+.menu-toggle {
+    padding: 4.5px 10px !important;
+    span {
+        line-height: 27px;
+    }
+}
+
+.navbar-toggler {
+    &:focus {
+        outline: none;
+    }
+}
+
+// ***** NAVBAR LIGHT ***** //
+.navbar-light {
+    background-color: $white;
+    border-bottom: 1px solid darken($light, 4%);
+    .nav-link {
+        &:after {
+            background: transparent;
+        }
+    }
+    .navbar-toggler {
+        border-color: transparent;
+    }
+    .navbar-nav {
+        li {
+            a {
+                color: rgba($dark, 0.55) !important;
+            }
+        }
+    }
+}
+
+.navbar-light .navbar-nav li.active a,
+.navbar-light .navbar-nav li a:hover,
+.navbar-light .navbar-nav li a:active {
+    color: $purple !important;
+    &:after {
+        width: 100%;
+        transition: width .3s;
+        background-color: $purple;
+    }
+}
+
+// ***** NAVBAR STICKY ***** //
+.nav-sticky {
+    &.navbar-custom {
+        margin-top: 0px;
+        background-color: $white;
+        box-shadow: 0 0 14px 0 rgba($black, 0.06);
+        color: $black !important;
+        .logo-sticky {
+            .logo-dark {
+                display: inline-block;
+            }
+            .logo-light {
+                display: none;
+            }
+        }
+    }
+    .navbar-nav {
+        margin-top: 0px;
+        li {
+            a {
+                color: rgba($dark, 0.55) !important;
+                &:after {
+                    background: transparent;
+                }
+            }
+        }
+    }
+}
+
+.nav-sticky.navbar-custom .navbar-nav li.active a,
+.nav-sticky.navbar-custom .navbar-nav li a:hover,
+.nav-sticky.navbar-custom .navbar-nav li a:active {
+    color: $purple !important;
+    &:after {
+        width: 100%;
+        transition: width .3s;
+        background: $purple !important;
+    }
+}
+
+@media (min-width: 200px) and (max-width: 768px) {
+    .navbar-custom {
+        margin-top: 0px;
+        background-color: $white;
+        .navbar-nav {
+            margin-top: 20px;
+            .nav-item {
+                .nav-link {
+                    display: inline-block;
+                    color: rgba($purple, 0.75) !important;
+                    text-decoration: none;
+                    &:after {
+                        background: $purple;
+                    }
+                }
+            }
+        }
+        .logo-sticky {
+            .logo-dark {
+                display: inline-block;
+            }
+            .logo-light {
+                display: none;
+            }
+        }
+    }
+    .navbar-collapse {
+        padding: 0 20px;
+    }
+    .navbar-toggler {
+        color: $dark;
+    }
+    &.nav-sticky.navbar-custom .navbar-nav li.active a,
+    &.nav-sticky.navbar-custom .navbar-nav li a:hover,
+    &.nav-sticky.navbar-custom .navbar-nav li a:active {
+        color: $purple !important;
+    }
+}

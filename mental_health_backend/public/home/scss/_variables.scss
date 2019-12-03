@@ -1,0 +1,47 @@
+//
+// variables.scss
+//
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:400,500,600,700&display=swap');
+
+// Color variables
+$white:                     #ffffff;
+$black:                     #000000;
+
+$primary:                   #2b53e1;
+$success:                   #06D6A0;
+$info:                      #1FA1FF;
+$warning:                   #FFD166;
+$danger:                    #f14367;
+$purple:                    #6d62fd;
+$dark:                      #343a40;
+$secondary:                 #6c757d;
+$muted:                     #949da8;
+$light:                     #fcfcfc;
+$body-color:                #212529;
+
+
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "dark": $dark,
+    "muted": $muted,
+    "light": $light,
+    "body-color": $body-color,
+    "purple": $purple,
+    "black": $black,
+    "white": $white
+);
+
+// Gradient color
+$bg-gradient: linear-gradient(to right, $purple, darken($purple, 8%));
+
+// FONT
+
+$font-family-base:            'Montserrat', sans-serif;
+$font-family-secondary:       'Lato', sans-serif;
