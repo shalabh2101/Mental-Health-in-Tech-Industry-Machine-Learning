@@ -62,7 +62,7 @@
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/login" class="nav-link">Login</a>
+                    <a href="" class="nav-link" id="btnLogin">Login</a>
                 </li>
                 <!--                    <li class="nav-item">-->
                 <!--                        <a href="" class="nav-link">Register</a>-->
@@ -596,7 +596,7 @@
 <script src="home/js/scrollspy.min.js"></script>
 <script src="home/js/jquery.easing.min.js"></script>
 <!-- COUNTER -->
-<script src="home/js/counter.int.js"></script>
+{{--<script src="home/js/counter.int.js"></script>--}}
 <!-- carousel -->
 <script src="home/js/owl.carousel.min.js"></script>
 <!-- Main Js -->

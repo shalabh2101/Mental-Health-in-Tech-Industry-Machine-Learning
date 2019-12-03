@@ -23,13 +23,13 @@ $(window).scroll(function() {
 
 
 // SmoothLink
-$('.navbar-nav a').on('click', function(event) {
-var $anchor = $(this);
-$('html, body').stop().animate({
-  scrollTop: $($anchor.attr('href')).offset().top - 0
-}, 1500, 'easeInOutExpo');
-event.preventDefault();
-});
+// $('.navbar-nav a').on('click', function(event) {
+// var $anchor = $(this);
+// $('html, body').stop().animate({
+//   scrollTop: $($anchor.attr('href')).offset().top - 0
+// }, 1500, 'easeInOutExpo');
+// event.preventDefault();
+// });
 
 // scrollspy
 $("#navbarCollapse").scrollspy({
@@ -51,4 +51,7 @@ $(document).ready(function() {
 });
 
 
-
+$('#btnLogin').click(function(){
+    window.location.href = "/login";
+    return false;
+});
