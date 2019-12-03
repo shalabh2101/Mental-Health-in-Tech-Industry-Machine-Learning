@@ -107,7 +107,7 @@
         // options
         firstActive: 0, // this is the default
         validationFunction: validateStep
-    })
+    });
 
     function validateStep(stepperForm, activeStepContent)
     {

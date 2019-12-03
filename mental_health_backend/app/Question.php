@@ -24,8 +24,8 @@ class Question extends Model
             $query = $query->where(['id' => $question_id ]);
         }
 
-        //TEMP
-        $query = $query->where(['question_category' => 'MENTAL_HEALTH']);
+//        //TEMP
+//        $query = $query->where(['question_category' => 'MENTAL_HEALTH']);
 
         return $query->get();
     }

@@ -22,9 +22,23 @@
             </nav>
 
             <div class="card">
+
                 <div class="card-header">
                     <h2 class="card-title">Survey Questions</h2>
                 </div>
+
+                <div class="row">
+                    <div class="container">
+                        <a href="/survey/{{ $survey_id }}/question/add">
+                            <button type="button" rel="tooltip" class="btn btn-success" data-toggle="tooltip" title="Add Question" style="    padding: 8px;
+        padding-left: 20px;
+        padding-right: 20px;">
+                                <i class="material-icons">add</i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="container-fluid table-responsive">
 
                     <table class="table table-hover ps-scrollbar-x">

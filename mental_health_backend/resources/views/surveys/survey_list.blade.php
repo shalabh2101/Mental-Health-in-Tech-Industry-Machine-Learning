@@ -12,6 +12,16 @@
                     <h2 class="card-title">Surveys</h2>
                 </div>
 
+                <div class="row">
+                    <div class="container">
+{{--                        <a href="/survey/{{ $survey_id }}/question/add">--}}
+                        <button type="button" rel="tooltip" class="col-md-1 btn btn-success" data-toggle="tooltip" title="Add Survey" style="max-width: ">
+                            <i class="material-icons">add</i>
+                        </button>
+{{--                        </a>--}}
+                    </div>
+                </div>
+
                 <div class="container-fluid">
 
                     <table class="table">

@@ -190,7 +190,7 @@ where survey_session_id = $survey_id  and sr.question_id in ($question_ids) orde
         if(!empty($questions))
         {
             $viewOnly = false;
-            return view('surveys.survey_questions_list',['question_list' => $questions,'sidenav' => 'manage_questions','viewOnly' => $viewOnly]);
+            return view('surveys.survey_questions_list',['survey_id' => $survey_id, 'question_list' => $questions,'sidenav' => 'manage_questions','viewOnly' => $viewOnly]);
         }
     }
 
@@ -266,6 +266,37 @@ where survey_session_id = $survey_id  and sr.question_id in ($question_ids) orde
     {
         $survey_sessions = SurveySession::where(['is_complete' => 1])->paginate(10);
         return view('surveys.survey_sessions',['survey_sessions' => $survey_sessions, 'sidenav' => 'survey_sessions']);
+    }
+
+    public function addSurveyQuestionForm($survey_id)
+    {
+        return view('surveys.add_question',['survey_id' => $survey_id, 'sidenav' => 'survey_add_question']);
+    }
+
+    public function addSurveyQuestion($survey_id, Request $request)
+    {
+        $question_data = $request->get('question_data');
+
+        $question = new Question();
+        $question->question = $question_data['question'];
+        $question->question_type = $question_data['question_type'];
+        $question->question_category = $question_data['category'];
+        $question->survey_id = $survey_id;
+        $question->save();
+
+        foreach($question_data['options'] as $q_option)
+        {
+            $option = new Option();
+            $option->question_id = $question->id;
+            $option->option_text = $q_option['option_text'];
+            $option->option_value = $q_option['option_value'];
+            $option->save();
+        }
+
+        $response = [];
+        $response['status'] = true;
+        $response['message'] = "Question Added";
+        return $response;
     }
 
 }

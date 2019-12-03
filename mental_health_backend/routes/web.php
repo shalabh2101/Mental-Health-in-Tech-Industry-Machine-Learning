@@ -42,9 +42,10 @@ Route::get("/survey/question/{question_id}/edit","SurveyController@editSurveyQue
 Route::get("/survey/question/{question_id}/view","SurveyController@viewSurveyQuestion");
 
 Route::post("/survey/question/update","SurveyController@updateSurveyQuestion");
-
 Route::post("/survey/publish_update/{survey_id}","SurveyController@publishUpdate");
 
+Route::get("/survey/{survey_id}/question/add","SurveyController@addSurveyQuestionForm");
+Route::post("/survey/{survey_id}/question/add","SurveyController@addSurveyQuestion");
 
 Route::get("/survey/test", "SurveyController@test");
 Route::get("/survey/sessions", "SurveyController@getSurveySessions");
