@@ -14,7 +14,7 @@
 use App\Http\Controllers\LoginController;
 //use Illuminate\Routing\Route;
 
-Route::get('/', "DashboardController@dashboard");
+Route::get('/', "HomeController@home");
 
 Route::get('/login', 'UserController@loginView')->name('login');
 Route::get('/logout', 'UserController@logout');
