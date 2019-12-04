@@ -32,6 +32,6 @@ class EmployeeController extends Controller
     public function viewAvailableSurveys($employee_id)
     {
         $survey_list = Survey::where(['is_published' => 1])->get();
-        return view("employees.employee_survey_list", ['survey_list' => $survey_list, 'sidenav' => 'employee_survey', 'employee_id' => $employee_id]);
+        return view("employees.employee_survey_list", ['survey_list' => $survey_list, 'sidenav' => 'employee_list', 'employee_id' => $employee_id]);
     }
 }

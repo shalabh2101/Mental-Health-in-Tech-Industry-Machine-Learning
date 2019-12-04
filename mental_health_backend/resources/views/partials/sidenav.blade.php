@@ -46,7 +46,7 @@
                 </a>
             </li>
 
-            <li class="nav-item {{ $sidenav == "mentor_recommendation" ? 'active' : '' }} ">
+            <li class="nav-item {{ $sidenav == "employee_list" ? 'active' : '' }} ">
                 <a class="nav-link" href="/employees/employee_list">
                     <i class="material-icons">content_paste</i>
                     <p>Employees</p>

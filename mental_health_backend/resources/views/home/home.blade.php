@@ -81,7 +81,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="hero-two-content text-white">
-                    <h1 class="hero-two-title line-height-1_4">Support Your Employees</h1>
+                    <h1 class="hero-two-title line-height-1_4">Support Your Tech Employees. There's more to life than 9 to 5!</h1>
                     <p class="text-white-80" style="margin-bottom: 0px !important">Workplace can be a strong contributor
                         to Mental Well being. </p>
                     <p class="text-white-80">Mental illness is not a personal failure.</p>
@@ -129,7 +129,7 @@
             <div class="col-md-4">
                 <div class="service-box mt-4">
                     <i class="pe-7s-refresh-2 text-purple h1 service-icon"></i>
-                    <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Mentor-Mantee Network</h5>
+                    <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Mentor-Mentee Network</h5>
                     <p class="text-muted mb-4 f-14">Custom matching of mentors and mentees based on their personality traits and tech skills.</p>
 <!--                    <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>-->
                 </div>
@@ -168,10 +168,10 @@
             </div>
             <div class="col-md-4">
                 <div class="service-box mt-4">
-                    <i class="pe-7s-users text-purple h1 service-icon"></i>
-                    <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Self-Help Groups</h5>
-                    <p class="text-muted mb-4 f-14">Identify and group people struggling with the same issues.</p>
-<!--                    <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>-->
+                    <i class="pe-7s-expand1 text-purple h1 service-icon"></i>
+                    <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Comfort level Predictor</h5>
+                    <p class="text-muted mb-4 f-14">Know, are your employees comfortable talking about their mental health issues</p>
+                    <!--                    <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>-->
                 </div>
             </div>
         </div>
@@ -208,7 +208,7 @@
                         <i class="pe-7s-smile text-purple h1 service-icon"></i>
                         <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Dog Therapy</h5>
                         <p class="text-muted mb-4 f-14">Your paw friend is here to help you relieve stress</p>
-                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+{{--                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>--}}
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -216,7 +216,7 @@
                         <i class="pe-7s-door-lock text-purple h1 service-icon"></i>
                         <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Counselling</h5>
                         <p class="text-muted mb-4 f-14">Talk to a counselor and heal yourself</p>
-                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+{{--                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>--}}
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -224,24 +224,16 @@
                         <i class="pe-7s-headphones text-purple h1 service-icon"></i>
                         <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">24x7 Helpline</h5>
                         <p class="text-muted mb-4 f-14">Life does not happen 9-5. Help available whenever you need it</p>
-                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+{{--                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>--}}
                     </div>
                 </div>
 
-                <div class="col-md-4">
+                <div class="offset-4 col-md-4">
                     <div class="service-box mt-4">
-                        <i class="pe-7s-graph1 text-purple h1 service-icon"></i>
-                        <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Personalized Surveys</h5>
-                        <p class="text-muted mb-4 f-14">XYZ</p>
-                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-box mt-4">
-                        <i class="pe-7s-graph1 text-purple h1 service-icon"></i>
-                        <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Detailed Analysis</h5>
-                        <p class="text-muted mb-4 f-14">XYZ</p>
-                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>
+                        <i class="pe-7s-users text-purple h1 service-icon"></i>
+                        <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Self-Help Groups</h5>
+                        <p class="text-muted mb-4 f-14">Identify and group people struggling with the same issues.</p>
+{{--                        <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>--}}
                     </div>
                 </div>
 <!--                <div class="col-md-4">-->
@@ -321,7 +313,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="title text-center mb-8">
-                    <h2 class="font-weight-medium line-height-1_6 text-white">Start Your Free Trail Now</h2>
+                    <h2 class="font-weight-medium line-height-1_6 text-white">Start Your Free Trial Now</h2>
                 </div>
             </div>
         </div>
