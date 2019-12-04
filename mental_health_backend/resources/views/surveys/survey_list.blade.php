@@ -29,6 +29,7 @@
                         <tr style="font-weight: bold">
                             <th class="text-center">Survey Id</th>
                             <th>Name</th>
+                            <th>Frequency</th>
                             <th>Is Published</th>
                             <th class="text-right">Actions</th>
                         </tr>
@@ -39,6 +40,7 @@
                             <tr>
                                 <td class="text-center">{{ $survey['id'] }}</td>
                                 <td>{{ $survey['survey_name'] }}</td>
+                                <td>{{ $survey['survey_type']}}</td>
                                 <td>{{ $survey['is_published'] == 1 ? 'Yes' : 'No' }}</td>
                                 <td class="td-actions text-right">
                                     @if($survey['is_published'] == 0)

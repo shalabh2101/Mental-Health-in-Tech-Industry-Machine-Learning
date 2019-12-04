@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MentalTreatmentStatus;
 use App\Question;
 use App\Survey;
 use App\SurveyResponse;
@@ -45,6 +46,9 @@ class SurveyController extends Controller
         $question = Question::where(['id' => $survey_response['question_id']])->first();
         $isLastQuestion = $survey_response['isLastQuestion'];
 
+        $survey_id = $question->survey_id;
+        $survey_session_id = $survey_response['survey_id'];
+
         if($question)
         {
             //Remove existing records if any
@@ -82,17 +86,16 @@ class SurveyController extends Controller
 
 
                 //Call ML API
-                $question_ids = array_column(Question::where(['question_category' => 'MENTAL_HEALTH'])->get()->toArray(), 'id');
-                $survey_id = 17;
+                $question_ids = array_column(Question::where(['survey_id' => $survey_id])->get()->toArray(), 'id');
                 $question_ids = implode(",", $question_ids);
 
                 $survey_result = DB::select("
                                                     select sr.id survey_session_id, sr.question_id question_id, answer_text, 
-                                                    question_type, option_value, option_text 
+                                                    question_type, question_summary, option_value, option_text 
                                                     from survey_responses sr
                                                     left join questions q on q.id = sr.question_id 
                                                     left join options o on o.id = sr.selected_option
-                                                    where survey_session_id = $survey_id  
+                                                    where survey_session_id = $survey_session_id
                                                     and sr.question_id in ($question_ids) 
                                                     order by q.id");
                 $survey_data  = [];
@@ -108,14 +111,30 @@ class SurveyController extends Controller
                         $response = $survey_response->option_value;
                     }
 
-                    $survey_data[$survey_response->question_id] = $response;
-
+                    $survey_data[$survey_response->question_summary] = $response;
                 }
 
-                $prediction_result = PredictionController::predictTreatmentRequirement($survey_data);
+//                echo "<pre>";
+//                print_r($survey_data);
 
-                $survey_session->treatment_required = $prediction_result;
-                $survey_session->save();
+                // Mental Health Survey - Temp. Make generic later
+                if($survey_id == 1)
+                {
+                    $prediction_result = PredictionController::predictTreatmentRequirement($survey_data);
+                    $mental_status = MentalTreatmentStatus::where(['survey_session_id' => $survey_session_id])->first();
+
+//                    print_r($prediction_result);
+                    if(empty($mental_status))
+                    {
+                        $mental_status = new MentalTreatmentStatus();
+                    }
+
+                    $mental_status->survey_session_id = $survey_session_id;
+                    $mental_status->treatment_required = $prediction_result['treatment'];
+                    $mental_status->fear = $prediction_result['fear'];
+                    $mental_status->save();
+                }
+
             }
         }
 

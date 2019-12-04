@@ -21,15 +21,12 @@ class PredictionController extends Controller
 
             $treatment_status = json_decode($res->getBody(),true);
 
-//            dd($treatment_status);
             $network_error = false;
-            $treatment_status = $treatment_status['result'];
             return $treatment_status;
         }
         catch (\Exception $e)
         {
             $network_error = true;
         }
-
     }
 }
