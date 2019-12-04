@@ -667,7 +667,7 @@
     <script>
 
         let revelChart = new Chart($('#revelChart'), {
-            type: 'bar',
+            type: 'pie',
             data: {
                 labels: ['Not applicable to me', 'Sometimes, if it comes up', 'No, because it would impact me negatively',
                     'No, because it doesn\'t matter', 'Yes, always'],
@@ -688,9 +688,16 @@
                 }]
             },
 
+            // labels: [
+            //    'Red',
+            //     'Yellow',
+            //     'Blue'
+            // ],
+
             options: {
                 legend: {
-                    display: false
+                    display: true,
+                    position: 'right'
                 },
 
                 layout: {
@@ -699,17 +706,17 @@
                         right: 200,
                         top: 50
                     }
-                },
+                }
                 // title:{
                 //     display:true,
                 //     text: 'Does your employer provide mental health benefits as part of healthcare coverage',
                 //     fontSize: 22
                 // },
-                scales: {
-                    xAxes: [{
-                        barThickness: 55,
-                    }]
-                }
+                // scales: {
+                //     xAxes: [{
+                //         barThickness: 55,
+                //     }]
+                // }
             }
 
         });
