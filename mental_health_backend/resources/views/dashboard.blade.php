@@ -110,6 +110,19 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-12">
+                        <div class="card card-chart">
+                            <div class="card-body">
+                                <h4 class="card-title">Does your employer provide mental health benefits as part of health care coverage</h4>
+                                <canvas id="benefitsChart"></canvas>
+                            </div>
+                            <div class="card-footer">
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
 
 {{--                    <canvas id="myChartJsChart" width="400" height="400"></canvas>--}}
@@ -431,8 +444,6 @@
     </script>
 
     <script>
-
-
         // Daily Stress Sample
         let streesChart = document.getElementById('stressChart');
 
@@ -468,5 +479,57 @@
 
         });
     </script>
+
+    <script>
+        // let myChart = document.getElementById('myChart').getContext('2d');
+        // Chart.defaults.global.defaultFontFamily='Lato',
+        //     Chart.defaults.global.defaultFontSize=18;
+        // Chart.defaults.global.defaultFontColor='#777';
+
+        let benefitChart = new Chart($('#benefitsChart'), {
+                type: 'bar',
+                data:{
+                    labels:['Yes', 'I dont know', 'No'],
+
+                    datasets:[{
+                        //  label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
+                        data:[531, 319, 213 ],
+
+                        backgroundColor: ['rgba(164, 201, 255, 0.6)',
+                            'rgba(76, 202, 202, 0.6)',
+                            'rgba(227, 232, 85, 0.6)'],
+                        borderWidth:2,
+                        hoverBorderWidth:2,
+                        hoverBorderColor: '#000'
+                    }]
+                },
+
+                options:{
+                    legend:{
+                        display:false
+                    },
+
+                    layout:{
+                        padding: {
+                            left: 40,
+                            right: 300,
+                            top: 50
+                        }
+                    },
+                    // title:{
+                    //     display:true,
+                    //     text: 'Does your employer provide mental health benefits as part of healthcare coverage',
+                    //     fontSize: 22
+                    // },
+                    scales: {
+                        xAxes: [{
+                            barThickness:55,
+                        }]
+                    }
+                }
+
+            });
+    </script>
+
 
     @include("partials.footer")
