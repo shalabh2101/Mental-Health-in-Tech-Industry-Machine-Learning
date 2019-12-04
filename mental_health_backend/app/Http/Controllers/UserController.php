@@ -80,7 +80,34 @@ class UserController extends Controller
     public function employeeList()
     {
         $employee_list = Employee::paginate(10);
-        return view('employees.employee_list',['employee_list' => $employee_list, 'sidenav' => 'employee_list']);
+
+        $summary = DB::select("select
+                                count(case when treatment_required = 'Yes' then 1 end) treatment_yes_count,
+                                count(case when treatment_required = 'No' then 1 end) treatment_no_count,
+                                count(case when fear = 'Yes' then 1 end) fear_yes_count,
+                                count(case when fear = 'No' then 1 end) fear_no_count
+                                 from
+                                (select max(id) latest_id, employee_id  from survey_session
+                                where is_complete = 1
+                                group by employee_id) a
+                                inner join employees e on e.id = a.`employee_id`
+                                inner join mental_treatment_status mts on mts.survey_session_id = a.latest_id");
+
+//        dd($summary[0]);
+        $treatment_yes_count = $summary[0]->treatment_yes_count;
+        $treatment_no_count = $summary[0]->treatment_no_count;
+        $fear_yes_count = $summary[0]->fear_yes_count;
+        $fear_no_count = $summary[0]->fear_no_count;
+
+        return view('employees.employee_list',
+            [
+                'employee_list' => $employee_list,
+                'sidenav' => 'employee_list',
+                'treatment_yes_count' => $treatment_yes_count,
+                'treatment_no_count' => $treatment_no_count,
+                'fear_yes_count' => $fear_yes_count,
+                'fear_no_count' => $fear_no_count,
+            ]);
     }
 
 }

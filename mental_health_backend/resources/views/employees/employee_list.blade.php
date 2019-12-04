@@ -7,6 +7,21 @@
     <div class="main-panel">
 
         <div class="content">
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="card col-md-5">
+                    <div>
+                        <canvas id="fearChart"></canvas>
+                    </div>
+                </div>
+                <div class="card col-md-5">
+                    <div>
+                        <canvas id="treatmentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
             <div class="card">
                 <div class="card-header">
                     <h2 class="card-title">Employees</h2>
@@ -54,8 +69,96 @@
     </div>
 </div>
 @include("partials.scripts");
+
 <script>
+    let fearChart = new Chart($('#fearChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Yes', 'No'],
+            datasets: [{
+                 // label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
+                data: [{{ $fear_yes_count }}, {{ $fear_no_count }}],
+                backgroundColor: ['rgba(164, 201, 255, 0.6)',
+                    'rgba(76, 202, 202, 0.6)'],
+
+                borderWidth: 2,
+                hoverBorderWidth: 2,
+                hoverBorderColor: '#000'
+            }]
+        },
+        options: {
+            legend: {
+                display: true,
+                position: 'bottom'
+            },
+
+            layout: {
+                padding: {
+                    left: 2,
+                    right: 0,
+                    top: 10
+                }
+            },
+            title:{
+                display:true,
+                text: 'People having fear about sharing mental health issue',
+                fontSize: 16
+            },
+            // scales: {
+            //     xAxes: [{
+            //         barThickness: 55,
+            //     }]
+            // }
+        }
+
+    });
+
+
+    let treatmentChart = new Chart($('#treatmentChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Yes', 'No'],
+            datasets: [{
+                // label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
+                data: [{{ $treatment_yes_count }}, {{ $treatment_no_count }}],
+                backgroundColor: [
+                    'rgba(131,104,209, 0.6)',
+                    'rgba(254,185,170, 0.6)'
+                ],
+
+                borderWidth: 2,
+                hoverBorderWidth: 2,
+                hoverBorderColor: '#000'
+            }]
+        },
+        options: {
+            legend: {
+                display: true,
+                position: 'bottom'
+            },
+
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 0,
+                    top: 10
+                }
+            },
+            title:{
+                display:true,
+                text: 'People who require treatment',
+                fontSize: 16
+            },
+            // scales: {
+            //     xAxes: [{
+            //         barThickness: 55,
+            //     }]
+            // }
+        }
+
+    });
 
 
 </script>
+
 @include("partials.footer");
