@@ -29,7 +29,6 @@ Route::get('/register',"UserController@loadRegisterView");
 Route::get("/dashboard","DashboardController@dashboard");
 
 Route::get("/survey/start","SurveyController@showSurvey");
-
 Route::post('/survey/save-answer', 'SurveyController@saveAnswer');
 
 Route::get("/survey/list","SurveyController@listSurveys");
@@ -44,6 +43,8 @@ Route::get("/survey/question/{question_id}/view","SurveyController@viewSurveyQue
 Route::post("/survey/question/update","SurveyController@updateSurveyQuestion");
 Route::post("/survey/publish_update/{survey_id}","SurveyController@publishUpdate");
 
+Route::get("/survey/create","SurveyController@createSurveyForm");
+Route::post("/survey/create","SurveyController@createSurvey");
 Route::get("/survey/{survey_id}/question/add","SurveyController@addSurveyQuestionForm");
 Route::post("/survey/{survey_id}/question/add","SurveyController@addSurveyQuestion");
 
