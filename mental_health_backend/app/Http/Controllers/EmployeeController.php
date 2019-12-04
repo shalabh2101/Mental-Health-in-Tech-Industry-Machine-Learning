@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Employee;
+use App\Survey;
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
 {
-    //
     public function viewEmployeeProfile($employee_id)
     {
 
@@ -26,5 +26,12 @@ class EmployeeController extends Controller
                 'list3' => $list3,
                 'sidenav' => 'employee_suggestion'
             ]);
+    }
+
+    public function viewAvailableSurveys($employee_id)
+    {
+        $survey_list = Survey::where(['is_published' => 1])->get();
+//        dd($survey_list);
+        return view("employees.employee_survey_list", ['survey_list' => $survey_list, 'sidenav' => 'employee_survey', 'employee_id' => $employee_id]);
     }
 }

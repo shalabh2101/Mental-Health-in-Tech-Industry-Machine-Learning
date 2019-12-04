@@ -323,4 +323,33 @@ where survey_session_id = $survey_id  and sr.question_id in ($question_ids) orde
         return view("surveys.add_survey",['sidenav' => 'survey_create']);
     }
 
+    public function takeEmployeeSurvey($survey_id, $employee_id){
+
+        $questions = Question::getQuestionWithOptions(null, $survey_id)->toArray();
+
+        $survey_session_id = session()->get('survey_session_id');
+        $survey_employee_id = session()->get('survey_employee_id');
+
+        if($survey_session_id != null)
+        {
+            $survey_session = SurveySession::where(['id' => $survey_id])->get();
+        }
+
+        if(is_null($survey_session_id) || $survey_employee_id != $employee_id)
+        {
+            $survey_session = SurveySession::create([
+                    'start_time' => Carbon::now()->format('Y-m-d H:i:s'),
+                    'survey_id' => $survey_id,
+                    'employee_id' => $employee_id,
+                    'is_complete' => 0
+                ]
+            );
+            session()->put('survey_session_id', $survey_session->id);
+            session()->put('survey_employee_id', $employee_id);
+            $survey_session_id = $survey_session->id;
+        }
+
+        return view("survey", ['survey_session_id' => $survey_session_id, 'total_questions' => count($questions), 'questions' => $questions]);
+    }
+
 }

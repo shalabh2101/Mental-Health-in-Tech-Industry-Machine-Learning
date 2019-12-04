@@ -14,7 +14,7 @@ class Question extends Model
         return $this->hasMany(Option::class,'question_id','id');
     }
 
-    public static function getQuestionWithOptions($question_id = null)
+    public static function getQuestionWithOptions($question_id = null, $survey_id = null)
     {
         $query = self::with(['options' => function($question_query) {
         }]);
@@ -24,6 +24,10 @@ class Question extends Model
             $query = $query->where(['id' => $question_id ]);
         }
 
+        if(!empty($survey_id))
+        {
+            $query = $query->where(['survey_id' => $survey_id ]);
+        }
 //        //TEMP
 //        $query = $query->where(['question_category' => 'MENTAL_HEALTH']);
 

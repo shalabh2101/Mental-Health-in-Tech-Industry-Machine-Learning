@@ -9,5 +9,5 @@ class SurveySession extends Model
     protected $table = "survey_session";
     public $timestamps = false;
 
-    protected $fillable = ['start_time'];
+    protected $fillable = ['start_time','employee_id', 'survey_id'];
 }

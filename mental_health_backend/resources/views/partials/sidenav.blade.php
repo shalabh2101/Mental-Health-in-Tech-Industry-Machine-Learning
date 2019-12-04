@@ -25,19 +25,19 @@
 {{--                </a>--}}
 {{--            </li>--}}
 
-            <li class="nav-item {{ $sidenav == "survey_sessions" ? 'active' : '' }} ">
-                <a class="nav-link" href="/survey/sessions">
-                    <i class="material-icons">content_paste</i>
-                    <p>Survey Sessions</p>
-                </a>
-            </li>
+{{--            <li class="nav-item {{ $sidenav == "survey_sessions" ? 'active' : '' }} ">--}}
+{{--                <a class="nav-link" href="/survey/sessions">--}}
+{{--                    <i class="material-icons">content_paste</i>--}}
+{{--                    <p>Survey Sessions</p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
 
-            <li class="nav-item {{ $sidenav == "appointments" ? 'active' : '' }} ">
-                <a class="nav-link" href="/survey/start">
-                    <i class="material-icons">content_paste</i>
-                    <p>Survey</p>
-                </a>
-            </li>
+{{--            <li class="nav-item {{ $sidenav == "appointments" ? 'active' : '' }} ">--}}
+{{--                <a class="nav-link" href="/survey/start">--}}
+{{--                    <i class="material-icons">content_paste</i>--}}
+{{--                    <p>Survey</p>--}}
+{{--                </a>--}}
+{{--            </li>--}}
 
             <li class="nav-item {{ $sidenav == "manage_survey" ? 'active' : '' }} ">
                 <a class="nav-link" href="/survey/list">
@@ -49,7 +49,7 @@
             <li class="nav-item {{ $sidenav == "mentor_recommendation" ? 'active' : '' }} ">
                 <a class="nav-link" href="/employees/employee_list">
                     <i class="material-icons">content_paste</i>
-                    <p>Mentor Recommendation</p>
+                    <p>Employees</p>
                 </a>
             </li>
 {{--            <li class="nav-item ">--}}

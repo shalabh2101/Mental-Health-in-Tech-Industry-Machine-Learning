@@ -47,10 +47,12 @@ Route::get("/survey/create","SurveyController@createSurveyForm");
 Route::post("/survey/create","SurveyController@createSurvey");
 Route::get("/survey/{survey_id}/question/add","SurveyController@addSurveyQuestionForm");
 Route::post("/survey/{survey_id}/question/add","SurveyController@addSurveyQuestion");
-
 Route::get("/survey/test", "SurveyController@test");
 Route::get("/survey/sessions", "SurveyController@getSurveySessions");
+
+Route::get("/survey/{survey_id}/employee/{employee_id}", "SurveyController@takeEmployeeSurvey");
 
 Route::get("/employees/employee_list", "UserController@employeeList");
 
 Route::get("/employees/profile/{employee_id}", "EmployeeController@viewEmployeeProfile");
+Route::get("/employees/survey_list/{employee_id}", "EmployeeController@viewAvailableSurveys");
