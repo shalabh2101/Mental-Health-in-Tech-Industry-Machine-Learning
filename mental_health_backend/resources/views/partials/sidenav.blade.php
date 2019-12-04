@@ -47,12 +47,11 @@
             </li>
 
             <li class="nav-item {{ $sidenav == "mentor_recommendation" ? 'active' : '' }} ">
-                <a class="nav-link" href="/mentor-recommendation/list">
+                <a class="nav-link" href="/employees/employee_list">
                     <i class="material-icons">content_paste</i>
                     <p>Mentor Recommendation</p>
                 </a>
             </li>
-
 {{--            <li class="nav-item ">--}}
 {{--                <a class="nav-link" href="./typography.html">--}}
 {{--                    <i class="material-icons">library_books</i>--}}

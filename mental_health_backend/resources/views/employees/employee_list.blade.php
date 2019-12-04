@@ -29,9 +29,11 @@
                             <td class="text-center">{{ $employee['id']}}</td>
                             <td>{{ $employee['name'] }}</td>
                             <td>
-                                <button type="button" rel="tooltip" class="btn btn-info form-check-inline" data-toggle="tooltip" title="View Recommendation">
-                                    <i class="material-icons">remove_red_eye</i>
-                                </button>
+                               <a href="/employees/profile/{{ $employee['id']}}">
+                                    <button type="button" rel="tooltip" class="btn btn-info form-check-inline" data-toggle="tooltip" title="View Recommendation">
+                                        <i class="material-icons">remove_red_eye</i>
+                                    </button>
+                               </a>
                             </td>
                         @endforeach
                         </tbody>

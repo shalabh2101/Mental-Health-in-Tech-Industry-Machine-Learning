@@ -78,56 +78,39 @@
                     {{--                        </div>--}}
                     {{--                    </div>--}}
                 </div>
+
                 <div class="row">
-{{--                    <div class="col-md-4">--}}
-{{--                        <div class="card card-chart">--}}
+                    <div class="col-md-12">
+                        <div class="card card-chart">
 {{--                            <div class="card-header card-header-success">--}}
 {{--                                <div class="ct-chart" id="dailySalesChart"></div>--}}
 {{--                            </div>--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h4 class="card-title">Blood Group Requests By Day</h4>--}}
+                            <div class="card-body">
+                                <h4 class="card-title">Daily Stress</h4>
+                                <canvas id="stressChart"></canvas>
 {{--                                <p class="card-category">--}}
 {{--                                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in requests today.</p>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-footer">--}}
+                            </div>
+                            <div class="card-footer">
 {{--                                <div class="stats">--}}
 {{--                                    <i class="material-icons">access_time</i> updated 4 minutes ago--}}
 {{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                    <div class="col-md-4">--}}
-{{--                        <div class="card card-chart">--}}
-{{--                            <div class="card-header card-header-success">--}}
-{{--                                <div class="ct-chart" id="myLineChart"></div>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h4 class="card-title">Days</h4>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-footer">--}}
-{{--                                <div class="stats">--}}
-{{--                                    <i class="material-icons">access_time</i> updated 4 minutes ago--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                    <div class="col-md-4">--}}
-{{--                        <div class="card card-chart">--}}
-{{--                            <div class="card-header card-header-success">--}}
-{{--                                <canvas class="ct-chart" id="myChartJsChart"></canvas>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-body">--}}
-{{--                                <h4 class="card-title">Days</h4>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-footer">--}}
-{{--                                <div class="stats">--}}
-{{--                                    <i class="material-icons">access_time</i> updated 4 minutes ago--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-chart">
+                            <div class="card-body">
+                                <h4 class="card-title">People who think Mental Health would hurt Career</h4>
+                                <canvas id="careerChart"></canvas>
+                            </div>
+                            <div class="card-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 {{--                    <canvas id="myChartJsChart" width="400" height="400"></canvas>--}}
 
@@ -165,7 +148,7 @@
                     {{--                        </div>--}}
                     {{--                    </div>--}}
                     {{--                </div>--}}
-                </div>
+
             </div>
         </div>
     </div>
@@ -405,4 +388,85 @@
             }
         });
     </script>
+
+    <script>
+        // Would hurt career
+        var careerChart = new Chart($('#careerChart'), {
+            type: 'bar',
+            data: {
+                labels : ['Yes, It would', 'No,it wont', 'Maybe', 'Yes, it has', 'No, it has not'],
+                datasets: [{
+                    data: [563, 147, 588, 105, 30],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1,
+                    barThickness: 'flex',
+                    maxBarThickness: 1,
+                }],
+            },
+            options: {
+                responsive : true,
+                legend : {
+                    position : top
+                },
+                title : {
+                    display: true,
+                    text : "Will Mental Health affect Career"
+                }
+            }
+        });
+        $('#careerChart').parents('div.card-body').css({'padding-left': '10px'})
+    </script>
+
+    <script>
+
+
+        // Daily Stress Sample
+        let streesChart = document.getElementById('stressChart');
+
+        Chart.defaults.global.defaultFontFamily='Lato',
+            Chart.defaults.global.defaultFontSize=18;
+        Chart.defaults.global.defaultFontColor='#777';
+
+        let moodChart = new Chart(streesChart, {
+            type: 'line',
+            data:{
+                labels:['1st Nov', '2nd Nov', '3rd Nov', '4th Nov', '5th Nov', '6th Nov', '7th Nov', '8th Nov', '9th Nov', '10th Nov', '11th Nov', '12th Nov',
+                    '13th Nov', '14th Nov', '15th Nov', '16th Nov', '17th Nov', '18th Nov', '19th Nov', '20th Nov', '21st Nov', '22nd Nov', '23rd Nov', '24th Nov',
+                    '25th Nov', '26th Nov', '27th Nov', '28th Nov', '29th Nov', '30th Nov'],
+
+                datasets:[{
+                    label:'Daily Mood',
+                    data:[
+                        2.17, 0, 0, 3.92, 3, 3.83, 3.12, 2.43, 0, 0, 3.75, 3.75, 3.98, 3.38 ,2.18, 0, 0, 4.04, 3, 3.92, 2.5, 1.9, 0, 0, 4.03, 3.84, 4.33, 3.14, 2.12, 0 ],
+
+                    backgroundColor: ['rgba(75, 192, 192, 0.6)'],
+                    borderWidth:2,
+                    hoverBorderWidth:2,
+                    hoverBorderColor: '#000'
+                }]
+            },
+            options:{
+                title:{
+                    display:true,
+                    text: 'Daily Avg. employee stress',
+                    fontSize: 18
+                }
+            }
+
+        });
+    </script>
+
     @include("partials.footer")
