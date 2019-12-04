@@ -29,38 +29,38 @@
                             </div>
                         </div>
                     </div>
-{{--                    <div class="col-lg-4 col-md-6 col-sm-6">--}}
-{{--                        <div class="card card-stats">--}}
-{{--                            <div class="card-header card-header-success card-header-icon">--}}
-{{--                                <div class="card-icon">--}}
-{{--                                    <i class="material-icons">check_circle</i>--}}
-{{--                                </div>--}}
-{{--                                <p class="card-category">Completed Donations</p>--}}
-{{--                                <h3 class="card-title"></h3>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-footer">--}}
-{{--                                <div class="stats">--}}
-{{--                                    --}}{{--                                    <i class="material-icons">date_range</i> Last 24 Hours--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class="col-lg-4 col-md-6 col-sm-6">--}}
-{{--                        <div class="card card-stats">--}}
-{{--                            <div class="card-header card-header-danger card-header-icon">--}}
-{{--                                <div class="card-icon">--}}
-{{--                                    <i class="material-icons">info_outline</i>--}}
-{{--                                </div>--}}
-{{--                                <p class="card-category">Cancelled Appointments</p>--}}
-{{--                                <h3 class="card-title"></h3>--}}
-{{--                            </div>--}}
-{{--                            <div class="card-footer">--}}
-{{--                                <div class="stats">--}}
-{{--                                    --}}{{--                                    <i class="material-icons">local_offer</i> Tracked from Github--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="col-lg-4 col-md-6 col-sm-6">--}}
+                    {{--                        <div class="card card-stats">--}}
+                    {{--                            <div class="card-header card-header-success card-header-icon">--}}
+                    {{--                                <div class="card-icon">--}}
+                    {{--                                    <i class="material-icons">check_circle</i>--}}
+                    {{--                                </div>--}}
+                    {{--                                <p class="card-category">Completed Donations</p>--}}
+                    {{--                                <h3 class="card-title"></h3>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="card-footer">--}}
+                    {{--                                <div class="stats">--}}
+                    {{--                                    --}}{{--                                    <i class="material-icons">date_range</i> Last 24 Hours--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    {{--                    <div class="col-lg-4 col-md-6 col-sm-6">--}}
+                    {{--                        <div class="card card-stats">--}}
+                    {{--                            <div class="card-header card-header-danger card-header-icon">--}}
+                    {{--                                <div class="card-icon">--}}
+                    {{--                                    <i class="material-icons">info_outline</i>--}}
+                    {{--                                </div>--}}
+                    {{--                                <p class="card-category">Cancelled Appointments</p>--}}
+                    {{--                                <h3 class="card-title"></h3>--}}
+                    {{--                            </div>--}}
+                    {{--                            <div class="card-footer">--}}
+                    {{--                                <div class="stats">--}}
+                    {{--                                    --}}{{--                                    <i class="material-icons">local_offer</i> Tracked from Github--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                     {{--                    <div class="col-lg-3 col-md-6 col-sm-6">--}}
                     {{--                        <div class="card card-stats">--}}
                     {{--                            <div class="card-header card-header-info card-header-icon">--}}
@@ -82,19 +82,19 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card card-chart">
-{{--                            <div class="card-header card-header-success">--}}
-{{--                                <div class="ct-chart" id="dailySalesChart"></div>--}}
-{{--                            </div>--}}
+                            {{--                            <div class="card-header card-header-success">--}}
+                            {{--                                <div class="ct-chart" id="dailySalesChart"></div>--}}
+                            {{--                            </div>--}}
                             <div class="card-body">
                                 <h4 class="card-title">Daily Stress</h4>
                                 <canvas id="stressChart"></canvas>
-{{--                                <p class="card-category">--}}
-{{--                                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in requests today.</p>--}}
+                                {{--                                <p class="card-category">--}}
+                                {{--                                    <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in requests today.</p>--}}
                             </div>
                             <div class="card-footer">
-{{--                                <div class="stats">--}}
-{{--                                    <i class="material-icons">access_time</i> updated 4 minutes ago--}}
-{{--                                </div>--}}
+                                {{--                                <div class="stats">--}}
+                                {{--                                    <i class="material-icons">access_time</i> updated 4 minutes ago--}}
+                                {{--                                </div>--}}
                             </div>
                         </div>
                     </div>
@@ -114,8 +114,45 @@
                     <div class="col-md-12">
                         <div class="card card-chart">
                             <div class="card-body">
-                                <h4 class="card-title">Does your employer provide mental health benefits as part of health care coverage</h4>
+                                <h4 class="card-title">Does your employer provide mental health benefits as part of
+                                    health care coverage</h4>
                                 <canvas id="benefitsChart"></canvas>
+                            </div>
+                            <div class="card-footer">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card card-chart">
+                            <div class="card-body">
+                                <h4 class="card-title">Do you think that discussing mental health disorder with your
+                                    employer would have negative consequences</h4>
+                                <canvas id="discussChart"></canvas>
+                            </div>
+                            <div class="card-footer">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="card card-chart">
+                            <div class="card-body">
+                                <h4 class="card-title">Would you feel comfortable discussing a mental health disorder with your direct supervisor(s)</h4>
+                                <canvas id="directSupChart"></canvas>
+                            </div>
+                            <div class="card-footer">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-12">
+                        <div class="card card-chart">
+                            <div class="card-body">
+                                <h4 class="card-title">If you have been diagnosed or treated for a mental health disorder,
+                                    do you ever reveal this to coworkers or employees?</h4>
+                                <canvas id="revelChart"></canvas>
                             </div>
                             <div class="card-footer">
                             </div>
@@ -125,42 +162,42 @@
 
                 </div>
 
-{{--                    <canvas id="myChartJsChart" width="400" height="400"></canvas>--}}
+                {{--                    <canvas id="myChartJsChart" width="400" height="400"></canvas>--}}
 
 
-                    {{--                    <div class="col-md-4">--}}
-                    {{--                        <div class="card card-chart">--}}
-                    {{--                            <div class="card-header card-header-warning">--}}
-                    {{--                                <div class="ct-chart" id="websiteViewsChart"></div>--}}
-                    {{--                            </div>--}}
-                    {{--                            <div class="card-body">--}}
-                    {{--                                <h4 class="card-title">Email Subscriptions</h4>--}}
-                    {{--                                <p class="card-category">Last Campaign Performance</p>--}}
-                    {{--                            </div>--}}
-                    {{--                            <div class="card-footer">--}}
-                    {{--                                <div class="stats">--}}
-                    {{--                                    <i class="material-icons">access_time</i> campaign sent 2 days ago--}}
-                    {{--                                </div>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                    {{--                    <div class="col-md-4">--}}
-                    {{--                        <div class="card card-chart">--}}
-                    {{--                            <div class="card-header card-header-danger">--}}
-                    {{--                                <div class="ct-chart" id="completedTasksChart"></div>--}}
-                    {{--                            </div>--}}
-                    {{--                            <div class="card-body">--}}
-                    {{--                                <h4 class="card-title">Completed Tasks</h4>--}}
-                    {{--                                <p class="card-category">Last Campaign Performance</p>--}}
-                    {{--                            </div>--}}
-                    {{--                            <div class="card-footer">--}}
-                    {{--                                <div class="stats">--}}
-                    {{--                                    <i class="material-icons">access_time</i> campaign sent 2 days ago--}}
-                    {{--                                </div>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                    {{--                </div>--}}
+                {{--                    <div class="col-md-4">--}}
+                {{--                        <div class="card card-chart">--}}
+                {{--                            <div class="card-header card-header-warning">--}}
+                {{--                                <div class="ct-chart" id="websiteViewsChart"></div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="card-body">--}}
+                {{--                                <h4 class="card-title">Email Subscriptions</h4>--}}
+                {{--                                <p class="card-category">Last Campaign Performance</p>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="card-footer">--}}
+                {{--                                <div class="stats">--}}
+                {{--                                    <i class="material-icons">access_time</i> campaign sent 2 days ago--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                    <div class="col-md-4">--}}
+                {{--                        <div class="card card-chart">--}}
+                {{--                            <div class="card-header card-header-danger">--}}
+                {{--                                <div class="ct-chart" id="completedTasksChart"></div>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="card-body">--}}
+                {{--                                <h4 class="card-title">Completed Tasks</h4>--}}
+                {{--                                <p class="card-category">Last Campaign Performance</p>--}}
+                {{--                            </div>--}}
+                {{--                            <div class="card-footer">--}}
+                {{--                                <div class="stats">--}}
+                {{--                                    <i class="material-icons">access_time</i> campaign sent 2 days ago--}}
+                {{--                                </div>--}}
+                {{--                            </div>--}}
+                {{--                        </div>--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
 
             </div>
         </div>
@@ -168,8 +205,8 @@
 
     @include("partials.scripts");
     <script>
-        $(document).ready(function() {
-            $().ready(function() {
+        $(document).ready(function () {
+            $().ready(function () {
                 $sidebar = $('.sidebar');
 
                 $sidebar_img_container = $sidebar.find('.sidebar-background');
@@ -189,7 +226,7 @@
 
                 }
 
-                $('.fixed-plugin a').click(function(event) {
+                $('.fixed-plugin a').click(function (event) {
                     // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
                     if ($(this).hasClass('switch-trigger')) {
                         if (event.stopPropagation) {
@@ -200,7 +237,7 @@
                     }
                 });
 
-                $('.fixed-plugin .active-color span').click(function() {
+                $('.fixed-plugin .active-color span').click(function () {
                     $full_page_background = $('.full-page-background');
 
                     $(this).siblings().removeClass('active');
@@ -221,7 +258,7 @@
                     }
                 });
 
-                $('.fixed-plugin .background-color .badge').click(function() {
+                $('.fixed-plugin .background-color .badge').click(function () {
                     $(this).siblings().removeClass('active');
                     $(this).addClass('active');
 
@@ -232,7 +269,7 @@
                     }
                 });
 
-                $('.fixed-plugin .img-holder').click(function() {
+                $('.fixed-plugin .img-holder').click(function () {
                     $full_page_background = $('.full-page-background');
 
                     $(this).parent('li').siblings().removeClass('active');
@@ -242,7 +279,7 @@
                     var new_image = $(this).find("img").attr('src');
 
                     if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
-                        $sidebar_img_container.fadeOut('fast', function() {
+                        $sidebar_img_container.fadeOut('fast', function () {
                             $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
                             $sidebar_img_container.fadeIn('fast');
                         });
@@ -251,7 +288,7 @@
                     if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
                         var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
 
-                        $full_page_background.fadeOut('fast', function() {
+                        $full_page_background.fadeOut('fast', function () {
                             $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
                             $full_page_background.fadeIn('fast');
                         });
@@ -270,7 +307,7 @@
                     }
                 });
 
-                $('.switch-sidebar-image input').change(function() {
+                $('.switch-sidebar-image input').change(function () {
                     $full_page_background = $('.full-page-background');
 
                     $input = $(this);
@@ -302,7 +339,7 @@
                     }
                 });
 
-                $('.switch-sidebar-mini input').change(function() {
+                $('.switch-sidebar-mini input').change(function () {
                     $body = $('body');
 
                     $input = $(this);
@@ -317,7 +354,7 @@
 
                         $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
 
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $('body').addClass('sidebar-mini');
 
                             md.misc.sidebar_mini_active = true;
@@ -325,12 +362,12 @@
                     }
 
                     // we simulate the window Resize so the charts will get updated in realtime.
-                    var simulateWindowResize = setInterval(function() {
+                    var simulateWindowResize = setInterval(function () {
                         window.dispatchEvent(new Event('resize'));
                     }, 180);
 
                     // we stop the simulation of Window Resize after the animations are completed
-                    setTimeout(function() {
+                    setTimeout(function () {
                         clearInterval(simulateWindowResize);
                     }, 1000);
 
@@ -339,7 +376,7 @@
         });
     </script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             // Javascript method's body can be found in assets/js/demos.js
             md.initDashboardPageCharts();
 
@@ -407,7 +444,7 @@
         var careerChart = new Chart($('#careerChart'), {
             type: 'bar',
             data: {
-                labels : ['Yes, It would', 'No,it wont', 'Maybe', 'Yes, it has', 'No, it has not'],
+                labels: ['Yes, It would', 'No,it wont', 'Maybe', 'Yes, it has', 'No, it has not'],
                 datasets: [{
                     data: [563, 147, 588, 105, 30],
                     backgroundColor: [
@@ -430,13 +467,13 @@
                 }],
             },
             options: {
-                responsive : true,
-                legend : {
-                    position : top
+                responsive: true,
+                legend: {
+                    position: top
                 },
-                title : {
+                title: {
                     display: true,
-                    text : "Will Mental Health affect Career"
+                    text: "Will Mental Health affect Career"
                 }
             }
         });
@@ -447,31 +484,31 @@
         // Daily Stress Sample
         let streesChart = document.getElementById('stressChart');
 
-        Chart.defaults.global.defaultFontFamily='Lato',
-            Chart.defaults.global.defaultFontSize=18;
-        Chart.defaults.global.defaultFontColor='#777';
+        Chart.defaults.global.defaultFontFamily = 'Lato',
+            Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#777';
 
         let moodChart = new Chart(streesChart, {
             type: 'line',
-            data:{
-                labels:['1st Nov', '2nd Nov', '3rd Nov', '4th Nov', '5th Nov', '6th Nov', '7th Nov', '8th Nov', '9th Nov', '10th Nov', '11th Nov', '12th Nov',
+            data: {
+                labels: ['1st Nov', '2nd Nov', '3rd Nov', '4th Nov', '5th Nov', '6th Nov', '7th Nov', '8th Nov', '9th Nov', '10th Nov', '11th Nov', '12th Nov',
                     '13th Nov', '14th Nov', '15th Nov', '16th Nov', '17th Nov', '18th Nov', '19th Nov', '20th Nov', '21st Nov', '22nd Nov', '23rd Nov', '24th Nov',
                     '25th Nov', '26th Nov', '27th Nov', '28th Nov', '29th Nov', '30th Nov'],
 
-                datasets:[{
-                    label:'Daily Mood',
-                    data:[
-                        2.17, 0, 0, 3.92, 3, 3.83, 3.12, 2.43, 0, 0, 3.75, 3.75, 3.98, 3.38 ,2.18, 0, 0, 4.04, 3, 3.92, 2.5, 1.9, 0, 0, 4.03, 3.84, 4.33, 3.14, 2.12, 0 ],
+                datasets: [{
+                    label: 'Daily Mood',
+                    data: [
+                        2.17, 0, 0, 3.92, 3, 3.83, 3.12, 2.43, 0, 0, 3.75, 3.75, 3.98, 3.38, 2.18, 0, 0, 4.04, 3, 3.92, 2.5, 1.9, 0, 0, 4.03, 3.84, 4.33, 3.14, 2.12, 0],
 
                     backgroundColor: ['rgba(75, 192, 192, 0.6)'],
-                    borderWidth:2,
-                    hoverBorderWidth:2,
+                    borderWidth: 2,
+                    hoverBorderWidth: 2,
                     hoverBorderColor: '#000'
                 }]
             },
-            options:{
-                title:{
-                    display:true,
+            options: {
+                title: {
+                    display: true,
                     text: 'Daily Avg. employee stress',
                     fontSize: 18
                 }
@@ -481,55 +518,202 @@
     </script>
 
     <script>
-        // let myChart = document.getElementById('myChart').getContext('2d');
-        // Chart.defaults.global.defaultFontFamily='Lato',
-        //     Chart.defaults.global.defaultFontSize=18;
-        // Chart.defaults.global.defaultFontColor='#777';
 
         let benefitChart = new Chart($('#benefitsChart'), {
-                type: 'bar',
-                data:{
-                    labels:['Yes', 'I dont know', 'No'],
+            type: 'bar',
+            data: {
+                labels: ['Yes', 'I dont know', 'No'],
 
-                    datasets:[{
-                        //  label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
-                        data:[531, 319, 213 ],
+                datasets: [{
+                    //  label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
+                    data: [531, 319, 213],
 
-                        backgroundColor: ['rgba(164, 201, 255, 0.6)',
-                            'rgba(76, 202, 202, 0.6)',
-                            'rgba(227, 232, 85, 0.6)'],
-                        borderWidth:2,
-                        hoverBorderWidth:2,
-                        hoverBorderColor: '#000'
-                    }]
+                    backgroundColor: ['rgba(164, 201, 255, 0.6)',
+                        'rgba(76, 202, 202, 0.6)',
+                        'rgba(227, 232, 85, 0.6)'],
+                    borderWidth: 2,
+                    hoverBorderWidth: 2,
+                    hoverBorderColor: '#000'
+                }]
+            },
+
+            options: {
+                legend: {
+                    display: false
                 },
 
-                options:{
-                    legend:{
-                        display:false
-                    },
-
-                    layout:{
-                        padding: {
-                            left: 40,
-                            right: 300,
-                            top: 50
-                        }
-                    },
-                    // title:{
-                    //     display:true,
-                    //     text: 'Does your employer provide mental health benefits as part of healthcare coverage',
-                    //     fontSize: 22
-                    // },
-                    scales: {
-                        xAxes: [{
-                            barThickness:55,
-                        }]
+                layout: {
+                    padding: {
+                        left: 40,
+                        right: 300,
+                        top: 50
                     }
+                },
+                // title:{
+                //     display:true,
+                //     text: 'Does your employer provide mental health benefits as part of healthcare coverage',
+                //     fontSize: 22
+                // },
+                scales: {
+                    xAxes: [{
+                        barThickness: 55,
+                    }]
                 }
+            }
 
-            });
+        });
     </script>
 
 
-    @include("partials.footer")
+    <script>
+
+        let discussChart = new Chart($('#discussChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Yes', 'No', 'Maybe'],
+
+                datasets: [{
+                    //  label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
+                    data: [319, 485, 511],
+
+                    backgroundColor: ['rgba(164, 201, 255, 0.6)',
+                        'rgba(76, 202, 202, 0.6)',
+                        'rgba(227, 232, 85, 0.6)'],
+
+                    borderWidth: 2,
+                    hoverBorderWidth: 2,
+                    hoverBorderColor: '#000'
+                }]
+            },
+
+            options: {
+                legend: {
+                    display: false
+                },
+
+                layout: {
+                    padding: {
+                        left: 200,
+                        right: 200,
+                        top: 50
+                    }
+                },
+                // title:{
+                //     display:true,
+                //     text: 'Does your employer provide mental health benefits as part of healthcare coverage',
+                //     fontSize: 22
+                // },
+                scales: {
+                    xAxes: [{
+                        barThickness: 55,
+                    }]
+                }
+            }
+
+        });
+
+    </script>
+
+    <script>
+
+        let directSupChart = new Chart($('#directSupChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Yes', 'Maybe', 'No'],
+
+                datasets: [{
+                    //  label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
+                    data: [428, 382, 336],
+
+                    backgroundColor: ['rgba(164, 201, 255, 0.6)',
+                        'rgba(76, 202, 202, 0.6)',
+                        'rgba(227, 232, 85, 0.6)'],
+
+                    borderWidth: 2,
+                    hoverBorderWidth: 2,
+                    hoverBorderColor: '#000'
+                }]
+            },
+
+            options: {
+                legend: {
+                    display: false
+                },
+
+                layout: {
+                    padding: {
+                        left: 200,
+                        right: 200,
+                        top: 50
+                    }
+                },
+                // title:{
+                //     display:true,
+                //     text: 'Does your employer provide mental health benefits as part of healthcare coverage',
+                //     fontSize: 22
+                // },
+                scales: {
+                    xAxes: [{
+                        barThickness: 55,
+                    }]
+                }
+            }
+
+        });
+
+    </script>
+
+
+    <script>
+
+        let revelChart = new Chart($('#revelChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Not applicable to me', 'Sometimes, if it comes up', 'No, because it would impact me negatively',
+                    'No, because it doesn\'t matter', 'Yes, always'],
+
+                datasets: [{
+                    //  label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
+                    data: [111, 99, 51, 15, 11],
+
+                    backgroundColor: ['rgba(164, 201, 255, 0.6)',
+                        'rgba(76, 202, 202, 0.6)',
+                        'rgba(227, 232, 85, 0.6)',
+                        'rgba(131,104,209, 0.6)',
+                        'rgba(254,185,170, 0.6)'],
+
+                    borderWidth: 2,
+                    hoverBorderWidth: 2,
+                    hoverBorderColor: '#000'
+                }]
+            },
+
+            options: {
+                legend: {
+                    display: false
+                },
+
+                layout: {
+                    padding: {
+                        left: 200,
+                        right: 200,
+                        top: 50
+                    }
+                },
+                // title:{
+                //     display:true,
+                //     text: 'Does your employer provide mental health benefits as part of healthcare coverage',
+                //     fontSize: 22
+                // },
+                scales: {
+                    xAxes: [{
+                        barThickness: 55,
+                    }]
+                }
+            }
+
+        });
+
+    </script>
+
+@include("partials.footer")
