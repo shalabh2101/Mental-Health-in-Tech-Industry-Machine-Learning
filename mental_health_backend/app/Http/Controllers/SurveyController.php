@@ -180,7 +180,7 @@ where survey_session_id = $survey_id  and sr.question_id in ($question_ids) orde
         if(!empty($questions))
         {
             $viewOnly = true;
-            return view('surveys.survey_questions_list',['question_list' => $questions,'sidenav' => 'manage_questions','viewOnly' => $viewOnly]);
+            return view('surveys.survey_questions_list',['survey_id' => $survey_id, 'question_list' => $questions,'sidenav' => 'manage_questions','viewOnly' => $viewOnly]);
         }
     }
 
