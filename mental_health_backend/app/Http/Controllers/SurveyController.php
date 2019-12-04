@@ -176,17 +176,17 @@ where survey_session_id = $survey_id  and sr.question_id in ($question_ids) orde
 
     public function viewSurveyQuestionList($survey_id)
     {
-        $questions = Question::where(['survey_id' => 1])->paginate(10);
+        $questions = Question::where(['survey_id' => $survey_id])->paginate(10);
         if(!empty($questions))
         {
             $viewOnly = true;
-            return view('surveys.survey_questions_list',['question_list' => $questions,'sidenav' => 'manage_questions','viewOnly' => $viewOnly]);
+            return view('surveys.survey_questions_list',['survey_id' => $survey_id, 'question_list' => $questions,'sidenav' => 'manage_questions','viewOnly' => $viewOnly]);
         }
     }
 
     public function editSurveyQuestionList($survey_id)
     {
-        $questions = Question::where(['survey_id' => 1])->paginate(10);
+        $questions = Question::where(['survey_id' => $survey_id])->paginate(10);
         if(!empty($questions))
         {
             $viewOnly = false;
@@ -224,13 +224,16 @@ where survey_session_id = $survey_id  and sr.question_id in ($question_ids) orde
             'question_id' => $question_id
         ])->delete();
 
-        foreach($question_data['options'] as $q_option)
+        if(!empty($question_data['options']))
         {
-            $option = new Option();
-            $option->question_id = $question_id;
-            $option->option_text = $q_option['option_text'];
-            $option->option_value = $q_option['option_value'];
-            $option->save();
+            foreach($question_data['options'] as $q_option)
+            {
+                $option = new Option();
+                $option->question_id = $question_id;
+                $option->option_text = $q_option['option_text'];
+                $option->option_value = $q_option['option_value'];
+                $option->save();
+            }
         }
 
         $response = [];
@@ -297,6 +300,27 @@ where survey_session_id = $survey_id  and sr.question_id in ($question_ids) orde
         $response['status'] = true;
         $response['message'] = "Question Added";
         return $response;
+    }
+
+    public function createSurvey(Request $request)
+    {
+        $survey_data = $request->get('survey_data');
+
+        $survey = new Survey();
+        $survey->survey_name = $survey_data['name'];
+        $survey->survey_type = $survey_data['type'];
+        $survey->is_published = 0;
+        $survey->save();
+
+        $response = [];
+        $response['status'] = true;
+        $response['message'] = "Survey Added";
+        return $response;
+    }
+
+    public function createSurveyForm()
+    {
+        return view("surveys.add_survey",['sidenav' => 'survey_create']);
     }
 
 }

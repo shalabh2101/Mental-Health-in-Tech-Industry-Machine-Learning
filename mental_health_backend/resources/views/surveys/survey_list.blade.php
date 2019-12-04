@@ -14,11 +14,11 @@
 
                 <div class="row">
                     <div class="container">
-{{--                        <a href="/survey/{{ $survey_id }}/question/add">--}}
+                        <a href="/survey/create">
                         <button type="button" rel="tooltip" class="col-md-1 btn btn-success" data-toggle="tooltip" title="Add Survey" style="max-width: ">
                             <i class="material-icons">add</i>
                         </button>
-{{--                        </a>--}}
+                        </a>
                     </div>
                 </div>
 
