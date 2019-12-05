@@ -6,8 +6,10 @@
 * Pratyush Sharma<br>
 * Kunika Mittal<br>
 ##
-   
- **Title** : **Mental health in Tech Industry**<br>
+
+Link: http://3.132.175.165/
+
+**Title** : **Mental health in Tech Industry**<br>
  
 **Abstract**
 
@@ -21,11 +23,12 @@ Employers need to develop a conducive environment in the workplace where mental 
 This project aims to understand the mental health conditions in the flourishing tech industries. OSMI -Open Source Mental Illness has taken various surveys which gives us huge data on the current perception of mental health of both employees and employers. This project aims to analyze the relationship between the parameters which may be responsible for influencing the mental health of the affected person. 
 
 We are aiming to explore the following questions:<br>
-a) How does the frequency of mental health illness and attitude towards mental health vary by geographic location?<br>
-b) How do the tech industries respond to the issue of mental health and how do they deal with it?<br>
-c) Steps to identify the stealth symptoms of the mental health illness at the workplace?<br>
-d) Suggest corrective measures to the employers that can help them create a conducive work environment.<br>
-e) Measure the effectiveness of the solution applied by the tech companies to handle the multiple issues.<br>
+
+a) How do the tech industries respond to the issue of mental health and how do they deal with it?<br>
+<br>
+b) Prediction on whether the person should go for the treatment or not?    
+b) Prediction whether the person feel negative about the sharing of the mental isssues.<br>
+c) Recommend the appropriate mentor to the  concerned person based on the similarity between the persons interest, hobbies,personality traits.<br>
 
 ---
 
@@ -37,11 +40,11 @@ e) Measure the effectiveness of the solution applied by the tech companies to ha
 
 **Technology Stack**
 
-**Programming languages & Libraries**: Python, Tensorflow, scikit-learn,matplotlib,mlxtend,seaborn
+**Programming languages & Libraries**: Python, scikit-learn, matplotlib, mlxtend,seaborn
 
-**Tools & Technologies**: Machine Learning, WebHarvey,Jupyter
+**Tools & Technologies**: Machine Learning, WebHarvey, Jupyter
 
-**Web Technologies**: HTML5, CSS3, JavaScript, React, Node.JS, REST API
+**Web Technologies**: HTML5, CSS3, JavaScript, Laravel, REST API, Chartjs
 
 **Miscellaneous** : Agile, Git, AWS
 
@@ -54,5 +57,3 @@ e) Measure the effectiveness of the solution applied by the tech companies to ha
 Who: Employer <br>
 What: Can gauge the mental health of his technical staff <br>
 Wow: Take corrective measures to help his employees have a better work environment that is supportive of their mental health conditions<br>
-
-Scope for improvement: Design a graphical profile of the employer which states the issues related to mental health among his employees and how our project will help him with this. Can do this depending on the time constraints.
