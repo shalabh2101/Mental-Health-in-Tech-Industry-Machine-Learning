@@ -13,8 +13,19 @@ class EmployeeController extends Controller
     public function viewEmployeeProfile($employee_id)
     {
 
+        if(!is_numeric($employee_id) || $employee_id < 0)
+        {
+            return redirect("/");
+        }
+
         $server_url = env('ML_SERVER_URL');
         $request = ['name' => $employee_id];
+
+        $mental_health_data = DB::select("select *
+from (select max(id) latest_id, employee_id  from survey_session where is_complete = 1 group by employee_id) a
+inner join employees e on e.id = a.`employee_id`
+inner join mental_treatment_status mts on mts.survey_session_id = a.latest_id
+where employee_id = $employee_id");
 
         try{
 
@@ -58,6 +69,7 @@ class EmployeeController extends Controller
         return view('employees.employee_recommendation',
             [
                   'recommendation_data' => $recommendation_data,
+                  'mental_health_data' => $mental_health_data,
                   'employee_data' => $employee_data,
                   'employee' => $employee,
                   'sidenav' => 'employee_list'

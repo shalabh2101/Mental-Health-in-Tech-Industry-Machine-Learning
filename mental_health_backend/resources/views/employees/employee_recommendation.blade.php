@@ -50,6 +50,11 @@
                                     </ul>
                                 </div>
                             @endif
+
+                                <div>
+                                    Required treatment :  {{ $mental_health_data[0]->treatment_required ?? 'NA' }}<br>
+                                    Fear of Conversation about mental health : {{ $mental_health_data[0]->fear ?? 'NA' }}<br>
+                                </div>
                         </div>
                     </div>
 
