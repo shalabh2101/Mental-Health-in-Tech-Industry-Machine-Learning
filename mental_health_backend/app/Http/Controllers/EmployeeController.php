@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 use App\Survey;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -12,20 +13,53 @@ class EmployeeController extends Controller
     public function viewEmployeeProfile($employee_id)
     {
 
-        $employee = Employee::where(['id' => $employee_id])->first();
-        $employee_interests = ['Rock', 'Latino', 'Comedy', 'Romantic', 'Fantasy/Fairy tales', 'Animated', 'Mathematics', 'Internet', 'Economy Management', 'Shopping', 'Fun with friends', 'Pets', 'Dangerous dogs', 'Thinking ahead', 'Decision making', 'Self-criticism', 'Mood swings', 'Achievements', 'Getting angry', 'Happiness in life', 'Finances'];
+        $server_url = env('ML_SERVER_URL');
+        $request = ['name' => $employee_id];
 
-        $list1 = ['Rock', 'Latino', 'Comedy', 'Romantic', 'Fantasy/Fairy tales', 'Animated', 'Mathematics', 'Internet', 'Economy Management', 'Shopping', 'Fun with friends', 'Pets', 'Dangerous dogs', 'Thinking ahead', 'Decision making', 'Self-criticism', 'Mood swings', 'Achievements', 'Getting angry', 'Happiness in life', 'Finances'];
-        $list2 = ['Rock', 'Latino', 'Comedy', 'Romantic', 'Fantasy/Fairy tales', 'Animated', 'Mathematics', 'Internet', 'Economy Management', 'Shopping', 'Fun with friends', 'Pets', 'Dangerous dogs', 'Thinking ahead', 'Decision making', 'Self-criticism', 'Mood swings', 'Achievements', 'Getting angry', 'Happiness in life', 'Finances'];
-        $list3 = ['Rock', 'Latino', 'Comedy', 'Romantic', 'Fantasy/Fairy tales', 'Animated', 'Mathematics', 'Internet', 'Economy Management', 'Shopping', 'Fun with friends', 'Pets', 'Dangerous dogs', 'Thinking ahead', 'Decision making', 'Self-criticism', 'Mood swings', 'Achievements', 'Getting angry', 'Happiness in life', 'Finances'];
+        try{
+
+            $client = new Client(['headers' => [ 'Content-Type' => 'application/json' ]]);
+
+            $res = $client->post($server_url ,
+                ['body' => json_encode($request, JSON_NUMERIC_CHECK)]
+            );
+
+            $recommendation_data = json_decode($res->getBody(),true);
+            $recommendation_data = $recommendation_data['result'];
+            if(is_array($recommendation_data))
+            {
+                //Data Found
+                $employee_data = array_pop($recommendation_data);
+                $recommendation_data[0]['class'] = "card-header-warning";
+                $recommendation_data[0]['name'] = Employee::where(['id' => $recommendation_data[0]['id']])->first()->name;
+
+                $recommendation_data[1]['class'] = "card-header-success";
+                $recommendation_data[1]['name'] = Employee::where(['id' => $recommendation_data[1]['id']])->first()->name;
+
+                $recommendation_data[2]['class'] = "card-header-danger";
+                $recommendation_data[2]['name'] = Employee::where(['id' => $recommendation_data[2]['id']])->first()->name;
+            }
+            else
+            {
+                //No data found
+                $employee_data = [];
+                $recommendation_data = [];
+            }
+        }
+        catch (\Exception $e)
+        {
+            $network_error = true;
+//            die('Exception');
+        }
+
+        $employee = Employee::where(['id' => $employee_id])->first();
 
         return view('employees.employee_recommendation',
-            ['employee_interests' => $employee_interests,
-              'employee' => $employee,
-              'list1' => $list1,
-                'list2' => $list2,
-                'list3' => $list3,
-                'sidenav' => 'employee_suggestion'
+            [
+                  'recommendation_data' => $recommendation_data,
+                  'employee_data' => $employee_data,
+                  'employee' => $employee,
+                  'sidenav' => 'employee_list'
             ]);
     }
 
@@ -34,4 +68,5 @@ class EmployeeController extends Controller
         $survey_list = Survey::where(['is_published' => 1])->get();
         return view("employees.employee_survey_list", ['survey_list' => $survey_list, 'sidenav' => 'employee_list', 'employee_id' => $employee_id]);
     }
+
 }
