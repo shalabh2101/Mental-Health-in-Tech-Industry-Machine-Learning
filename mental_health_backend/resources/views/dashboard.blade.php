@@ -138,7 +138,8 @@
                     <div class="col-md-12">
                         <div class="card card-chart">
                             <div class="card-body">
-                                <h4 class="card-title">Would you feel comfortable discussing a mental health disorder with your direct supervisor(s)</h4>
+                                <h4 class="card-title">Would you feel comfortable discussing a mental health disorder
+                                    with your direct supervisor(s)</h4>
                                 <canvas id="directSupChart"></canvas>
                             </div>
                             <div class="card-footer">
@@ -150,7 +151,8 @@
                     <div class="col-md-12">
                         <div class="card card-chart">
                             <div class="card-body">
-                                <h4 class="card-title">If you have been diagnosed or treated for a mental health disorder,
+                                <h4 class="card-title">If you have been diagnosed or treated for a mental health
+                                    disorder,
                                     do you ever reveal this to coworkers or employees?</h4>
                                 <canvas id="revelChart"></canvas>
                             </div>
@@ -676,7 +678,8 @@
                     //  label:'Does your employer provide mental health benefits as part of healthcare coverage: ',
                     data: [111, 99, 51, 15, 11],
 
-                    backgroundColor: ['rgba(164, 201, 255, 0.6)',
+                    backgroundColor: [
+                        'rgba(164, 201, 255, 0.6)',
                         'rgba(76, 202, 202, 0.6)',
                         'rgba(227, 232, 85, 0.6)',
                         'rgba(131,104,209, 0.6)',
@@ -688,11 +691,6 @@
                 }]
             },
 
-            // labels: [
-            //    'Red',
-            //     'Yellow',
-            //     'Blue'
-            // ],
 
             options: {
                 legend: {
@@ -707,16 +705,7 @@
                         top: 50
                     }
                 }
-                // title:{
-                //     display:true,
-                //     text: 'Does your employer provide mental health benefits as part of healthcare coverage',
-                //     fontSize: 22
-                // },
-                // scales: {
-                //     xAxes: [{
-                //         barThickness: 55,
-                //     }]
-                // }
+
             }
 
         });

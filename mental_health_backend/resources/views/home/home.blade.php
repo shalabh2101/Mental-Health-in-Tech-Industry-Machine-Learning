@@ -168,7 +168,7 @@
             </div>
             <div class="col-md-4">
                 <div class="service-box mt-4">
-                    <i class="pe-7s-expand1 text-purple h1 service-icon"></i>
+                    <i class="pe-7s-comment text-purple h1 service-icon"></i>
                     <h5 class="text-dark font-weight-medium service-title f-18 mb-3 mt-5">Comfort level Predictor</h5>
                     <p class="text-muted mb-4 f-14">Know, are your employees comfortable talking about their mental health issues</p>
                     <!--                    <a href="#" class="text-purple"><i class="remixicon-arrow-right-fill h4"></i></a>-->
