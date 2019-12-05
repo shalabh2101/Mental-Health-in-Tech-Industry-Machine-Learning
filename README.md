@@ -21,11 +21,12 @@ Employers need to develop a conducive environment in the workplace where mental 
 This project aims to understand the mental health conditions in the flourishing tech industries. OSMI -Open Source Mental Illness has taken various surveys which gives us huge data on the current perception of mental health of both employees and employers. This project aims to analyze the relationship between the parameters which may be responsible for influencing the mental health of the affected person. 
 
 We are aiming to explore the following questions:<br>
-a) How does the frequency of mental health illness and attitude towards mental health vary by geographic location?<br>
-b) How do the tech industries respond to the issue of mental health and how do they deal with it?<br>
-c) Steps to identify the stealth symptoms of the mental health illness at the workplace?<br>
-d) Suggest corrective measures to the employers that can help them create a conducive work environment.<br>
-e) Measure the effectiveness of the solution applied by the tech companies to handle the multiple issues.<br>
+
+a) How do the tech industries respond to the issue of mental health and how do they deal with it?<br>
+<br>
+b) Prediction on whether the person should go for the treatment or not?    
+b) Prediction whether the person feel negative about the sharing of the mental isssues.<br>
+c) Recommend the appropriate mentor to the  concerned person based on the similarity between the persons interest, hobbies,personality traits.<br>
 
 ---
 
