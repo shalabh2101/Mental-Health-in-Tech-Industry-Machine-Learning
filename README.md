@@ -6,8 +6,10 @@
 * Pratyush Sharma<br>
 * Kunika Mittal<br>
 ##
-   
- **Title** : **Mental health in Tech Industry**<br>
+
+Link: http://3.132.175.165/
+
+**Title** : **Mental health in Tech Industry**<br>
  
 **Abstract**
 
@@ -38,11 +40,11 @@ c) Recommend the appropriate mentor to the  concerned person based on the simila
 
 **Technology Stack**
 
-**Programming languages & Libraries**: Python, Tensorflow, scikit-learn,matplotlib,mlxtend,seaborn
+**Programming languages & Libraries**: Python, scikit-learn, matplotlib, mlxtend,seaborn
 
-**Tools & Technologies**: Machine Learning, WebHarvey,Jupyter
+**Tools & Technologies**: Machine Learning, WebHarvey, Jupyter
 
-**Web Technologies**: HTML5, CSS3, JavaScript, React, Node.JS, REST API
+**Web Technologies**: HTML5, CSS3, JavaScript, Laravel, REST API, Chartjs
 
 **Miscellaneous** : Agile, Git, AWS
 
