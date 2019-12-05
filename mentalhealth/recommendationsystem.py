@@ -13,7 +13,7 @@ import csv
 
 
 def csv_update(resp_obj):
-    with open('data/responses.csv', mode='a') as csv_file:
+    with open('/src/data/responses.csv', mode='a') as csv_file:
         fieldnames = ['name', 'lastName', 'Date', 'age']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         temp = {
@@ -25,7 +25,7 @@ def csv_update(resp_obj):
         writer.writerow(temp)
 
 
-data_location = 'data/responses.csv'
+data_location = '/src/data/responses.csv'
 data = pd.read_csv(data_location)
 
 app = Flask(__name__)
@@ -86,4 +86,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=90)
+    app.run(host='0.0.0.0', debug=True)
