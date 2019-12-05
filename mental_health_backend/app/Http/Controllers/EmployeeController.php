@@ -49,7 +49,8 @@ class EmployeeController extends Controller
         catch (\Exception $e)
         {
             $network_error = true;
-//            die('Exception');
+            $employee_data = [];
+            $recommendation_data = [];
         }
 
         $employee = Employee::where(['id' => $employee_id])->first();
