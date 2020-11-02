@@ -1,8 +1,8 @@
 # MentalHealth - Group-4
 
 ### Team Members
-* Alok Goyal<br>
 * Shalabh Neema<br>
+* Alok Goyal<br>
 * Pratyush Sharma<br>
 * Kunika Mittal<br>
 ##
